@@ -1,0 +1,29 @@
+<?php
+
+function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_state, $form_id) {
+  $form['stanford_r25_booking_reason']['#title'] = 'Event Title';
+  $form['stanford_r25_booking_headcount']['#type'] = 'hidden';
+  $form['stanford_r25_booking_headcount']['#value'] = 1;
+  $form['submit']['#prefix'] = '<span>By clicking the Reserve button, I confirm that I have read and agree to the <a href="https://uit.stanford.edu/service/techtraining/facilityrentalpolicy">Facility Rental Policy</a></span><br />';
+  $form['stanford_r25_booking_attr144']['#suffix'] = '<div class="form-item"><span class="description">E.g., 1234567-123-ABCDE (Case sensitive)</span></div>';
+  $form['stanford_r25_booking_attr182']['#suffix'] = '<div class="form-item"><span class="description">E.g., Mac or PC</span></div>';
+  $form['stanford_r25_booking_attr182']['#maxlength'] = 80;
+  array_unshift($form['#validate'], 'stanford_soe_r25_stanford_r25_pta_validate');
+}
+
+// Remove the Headcount: 2 (which is hard-coded) from the tool tip
+function stanford_soe_r25_stanford_r25_contact_alter(&$data) {
+  $data = str_replace('<br />Headcount: 2', '', $data);
+  $data = str_replace('<br />Headcount:', '', $data);
+}
+
+function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
+  if (preg_match('/;/', $form_state['values']['stanford_r25_booking_reason'])) {
+      form_set_error('stanford_r25_booking_reason', t('Please do not include the ; character in the title of the event.'));
+  }
+
+  $form_state['values']['stanford_r25_booking_attr144'] = trim($form_state['values']['stanford_r25_booking_attr144']);
+  if (!(preg_match('/^(\d{7})\-(\d.*)\-([A-Z]{5})$/', $form_state['values']['stanford_r25_booking_attr144']))) {
+      form_set_error('stanford_r25_booking_attr144', t('Invalid PTA Format. The correct format is Project-Task-Award (e.g. 1234567-123-ABCDE)'));
+  }
+}
