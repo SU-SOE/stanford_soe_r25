@@ -1,0 +1,598 @@
+<?php
+
+/**
+ * Implements hook_menu to provide access to a page where the Hartley
+ * administrator may download monthly reservation spreadsheets
+ * @return menu items array
+ */
+function se3_hartley_menu() {
+  $items = array();
+  $items['hartley_download'] = array(
+    'title' => 'Download Hartley Spreadsheet',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('se3_hartley_download'),
+    'access arguments' => array('administer stanford r25'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+// Hartley reservation site is available to anonymous users, but
+// they must go through WebAuth to identify as a Stanford affiliate without
+// actually logging in to Drupal. Drupal webauth accounts are reserved
+// for site admins
+function _se3_hartley_is_se3_user() {
+  global $user;
+  $se3_user = FALSE;
+  // if the user is logged in to Drupal, they must be an SE3 person
+  if ($user->uid > 1) {
+    $se3_user = TRUE;
+  }
+  else {
+    // if the user is anonymous, but has gone through WebAuth, we can
+    // see if they belong to our global workgroup and give them access
+    // to the reservation form
+    $external_acct = module_invoke_all('stanford_soe_r25_external_user');
+    // $external_acct is an array of information that we got from
+    // apache mod_webauth, not the Drupal WMD module
+    if (!empty($external_acct) && is_array($external_acct)) {
+      foreach ($external_acct as $key => $value) {
+        if (substr_compare($key, 'R25_EXTERNAL_PRIVGROUP', 0, 22) == 0 &&
+          $value == 'earthsci:drupal-accounts'
+        ) {
+          $se3_user = TRUE;
+          break;
+        }
+      }
+    }
+  }
+  return $se3_user;
+}
+
+/*
+ * Implements hook_form_alter
+ * Modifies the stanford_soe_r25 reservation form when the room id matches
+ * ones we set up for Hartley
+ */
+function se3_hartley_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'stanford_soe_r25_reservation') {
+    if (!empty($form['stanford_soe_r25_booking_roomid']['#value']) && substr($form['stanford_soe_r25_booking_roomid']['#value'], 0, 3) == 'mh0') {
+      // add our own validation function
+      if (empty($form['#validate'])) {
+        $form['#validate'] = array();
+      }
+      $form['#validate'][] = '_se3_hartley_form_validate';
+      // add our own submit function
+      if (empty($form['#submit'])) {
+        $form['#submit'] = array();
+      }
+      $form['#submit'][] = '_se3_hartley_form_submit';
+
+      // check if the user belongs to Stanford Earth
+      $se3_user = _se3_hartley_is_se3_user();
+
+      // Hartley administrators can reserve the room for dates during either
+      // the current or the next calendar year. Other people can only reserve
+      // the room for the *current* calendar year, until October when the
+      // next calendar year opens up.
+      $month = date('n');
+      if (!user_access('administer stanford r25') && $month < 10) {
+        $form['stanford_soe_r25_booking_date']['#date_year_range'] = "-0:+0";
+        $form['stanford_soe_r25_booking_enddate']['#date_year_range'] = "-0:+0";
+      }
+
+      // 25Live limits the length of attribute names and descriptions, so we
+      // will fix them up here.
+      $form['stanford_soe_r25_booking_reason']['#title'] = 'Event name';
+      $form['stanford_soe_r25_booking_attr176']['#title'] = 'Is the event host using Hartley for the first time?';
+      $form['stanford_soe_r25_booking_attr176']['#description'] = 'If so, we will be in touch with additional instructions after your reservation is confirmed.';
+      $form['stanford_soe_r25_booking_attr169']['#title'] = 'Will food and/or beverages be served at this event?';
+      $form['stanford_soe_r25_booking_attr169']['#description'] = 'If so, you must acknowledge that a work order for cleanup ' .
+        'is required and must be received by the School of Earth, Energy & Environmental Sciences no less than 48 ' .
+        'hours before the event.';
+      $form['stanford_soe_r25_booking_attr177']['#title'] = 'Description/Comments';
+      $form['stanford_soe_r25_booking_attr177']['#description'] = 'Any information, questions or remarks about this reservation.';
+      $form['stanford_soe_r25_contact_175']['#title'] = 'Booking Concact Info';
+      $form['stanford_soe_r25_contact_175']['#required'] = TRUE; // require contact
+
+
+      // if the user checks the "food will be served" box (25Live attr169), we
+      // force them to aree that they will provide a work-order for cleanup
+      // (25Live attr170).
+      $form['stanford_soe_r25_booking_attr170']['#title'] = 'I agree to provide a work order for after-event cleanup.';
+      $form['stanford_soe_r25_booking_attr170']['#states'] = array(
+        'required' => array(
+          ':input[name="stanford_soe_r25_booking_attr169"]' => array(
+            'checked' => TRUE
+          ),
+        ),
+        'visible' => array(
+          ':input[name="stanford_soe_r25_booking_attr169"]' => array(
+            'checked' => TRUE
+          ),
+        )
+      );
+
+      // if the person reserving the room belongs to Stanford Earth, they
+      // get to use the room for free, so we hide the relevant PTA fields
+      if ($se3_user) {
+        $form['stanford_soe_r25_booking_attr171']['#type'] = 'hidden';
+        $form['stanford_soe_r25_booking_attr172']['#type'] = 'hidden';
+        $form['stanford_soe_r25_booking_attr173']['#type'] = 'hidden';
+      }
+      // otherwise, we display and require PTA and signature authority
+      // fields (25Live attributes 171, 172, 173).
+      else {
+        $form['stanford_soe_r25_booking_attr171']['#title'] = 'Event is billable.';
+        $form['stanford_soe_r25_booking_attr171']['#description'] = 'Please provide a PTA number and Signature Authority.';
+        $form['stanford_soe_r25_booking_attr171']['#default_value'] = 1;
+        $form['stanford_soe_r25_booking_attr171']['#disabled'] = TRUE;
+        $form['stanford_soe_r25_booking_attr172']['#title'] = 'University PTA number';
+        $form['stanford_soe_r25_booking_attr172']['#description'] = 'PTA is required for billable reservations.';
+        $form['stanford_soe_r25_booking_attr172']['#states'] = array(
+          'required' => array(
+            ':input[name="stanford_soe_r25_booking_attr171"]' => array(
+              'checked' => TRUE
+            ),
+          ),
+          'visible' => array(
+            ':input[name="stanford_soe_r25_booking_attr171"]' => array(
+              'checked' => TRUE
+            ),
+          ),
+        );
+        $form['stanford_soe_r25_booking_attr173']['#title'] = 'Signature Authority';
+        $form['stanford_soe_r25_booking_attr173']['#description'] = 'Authorizing signee is required for billable reservations.';
+        $form['stanford_soe_r25_booking_attr173']['#states'] = array(
+          'required' => array(
+            ':input[name="stanford_soe_r25_booking_attr171"]' => array(
+              'checked' => TRUE
+            ),
+          ),
+          'visible' => array(
+            ':input[name="stanford_soe_r25_booking_attr171"]' => array(
+              'checked' => TRUE
+            ),
+          ),
+        );
+      }
+    }
+  }
+}
+
+/*
+ * implements hook_form_validate
+ */
+function _se3_hartley_form_validate($form, &$form_state) {
+
+  // if the user is not a site admin, don't let them manually enter
+  // dates that are restricted, as described in form_alter
+  if (!user_access('administer stanford r25')) {
+    $month = date('n');
+    $year = date('Y');
+    $start_year = intval(substr($form_state['values']['stanford_soe_r25_booking_date'], 0, 4));
+    $end_year = intval(substr($form_state['values']['stanford_soe_r25_booking_enddate'], 0, 4));
+    if ($month < 10 && ($start_year != $year || $end_year != $year)) {
+      form_set_error('stanford_soe_r25_booking_date', 'You may only reserve this space for dates during the current year.');
+      return;
+    }
+    else {
+      if ($start_year > $year + 1 || $end_year > $year + 1) {
+        form_set_error('stanford_soe_r25_booking_date', 'You may only reserve this space for dates during the remainder of this year and next year.');
+        return;
+      }
+    }
+  }
+
+  // enforce field requirements with appropriate messages
+  if (empty($form_state['values']['stanford_soe_r25_contact_175'])) {
+    form_set_error('stanford_soe_r25_contact_175', 'Please enter your contact information in the provided field.');
+    return;
+  }
+  if (!empty($form_state['values']['stanford_soe_r25_booking_attr169']) &&
+    intval($form_state['values']['stanford_soe_r25_booking_attr169'] == 1)
+  ) {
+    if (empty($form_state['values']['stanford_soe_r25_booking_attr170']) ||
+      intval($form_state['values']['stanford_soe_r25_booking_attr170']) == 0
+    ) {
+      form_set_error('stanford_soe_r25_booking_attr170', 'If you are serving food or beverages, you must agree to provide a work order for cleanup.');
+      return;
+    }
+  }
+  if (!empty($form_state['values']['stanford_soe_r25_booking_attr171']) &&
+    intval($form_state['values']['stanford_soe_r25_booking_attr171'] == 1)
+  ) {
+    if (empty($form_state['values']['stanford_soe_r25_booking_attr172'])) {
+      form_set_error('stanford_soe_r25_booking_attr172', 'Please provide a PTA number for billing for this reservation.');
+      return;
+    }
+    if (empty($form_state['values']['stanford_soe_r25_booking_attr173'])) {
+      form_set_error('stanford_soe_r25_booking_attr173', 'Please provide a signature authority name for billing for this reservation.');
+      return;
+    }
+  }
+}
+
+/*
+ * implements hook_form_submit
+ * because we check "postprocess booking" in the hartley room configuration, the
+ * stanford_soe_r25 module will store booking information into $form_state['storage']
+ * for us. We can then use that information here to generate an email to the
+ * person who reserved the room.
+ */
+function _se3_hartley_form_submit($form, &$form_state) {
+  if (!empty($form_state['storage']['stanford_soe_r25_postprocess']) &&
+    !empty($form_state['storage']['stanford_soe_r25_postprocess']['mailto'])
+  ) {
+    $room = $form_state['storage']['stanford_soe_r25_postprocess']['room'];
+    $dates = $form_state['storage']['stanford_soe_r25_postprocess']['dates'];
+    $mail_list = $form_state['storage']['stanford_soe_r25_postprocess']['mailto'];
+
+    $subject = $room['display_name'] . ': Your booking request is now pending approval';
+    $body = array();
+    $body[] = 'The Hartley booking manager will review your request as soon as possible, and you will receive email notification upon approval.';
+    $body[] = 'The details of your booking request follow.';
+    $body[] = 'Event name: ' . $form_state['storage']['stanford_soe_r25_postprocess']['event_name'];
+    $space_str = 'Event space: ' . $room['display_name'];
+    if ($room['machine_name'] == 'mh01') {
+      $space_str .= ' (Does *not* include Mitchell Patio)';
+    }
+    else {
+      if ($room['machine_name'] == 'mh02') {
+        $space_str .= ' (Does *not* include Hartley Conference Room and Kitchen';
+      }
+    }
+    $body[] = 'Event space: ' . $space_str;
+    $body[] = 'Starting: ' . DateTime::createFromFormat(DATE_W3C, $dates['start'])
+        ->format("l, F j, Y g:i a");
+    $body[] = 'Ending: ' . DateTime::createFromFormat(DATE_W3C, $dates['end'])
+        ->format("l, F j, Y g:i a");
+    $est_fee = $form_state['storage']['stanford_soe_r25_postprocess']['est_charge'];
+    if ($est_fee > 0) {
+      $body[] = 'Estimated Room Fee: $' . $est_fee . ' --reflects fee scheduled for time of event. Fees subject to change.';
+    }
+    $body[] = 'If food IS served or consumed, you must get a work order from Custodial Services. This is not negotiable. ';
+    $body[] = 'Allow at least 30 minutes for cleanup if you get a work order.';
+    $body[] = 'To update or cancel your booking request, please send an email with the relevant information to mailto:swasmer@stanford.edu';
+    $params = array(
+      'body' => $body,
+      'subject' => $subject
+    );
+    drupal_mail('stanford_soe_r25', $form_state['storage']['stanford_soe_r25_postprocess']['eventid'], $mail_list, language_default(), $params);
+  }
+  unset($form_state['storage']['stanford_soe_r25_postprocess']);
+}
+
+/*
+ * implements hook_user_insert
+ * when a site administrator logs in for the first time with the Webauth Module
+ * for Drupal, a Drupal account is created. This will do an LDAP lookup and
+ * set their Drupal user name to their LDAP DisplayName.
+ */
+function se3_hartley_user_insert(&$edit, $account, $category) {
+  global $user;
+  if (!empty($user->uid) && $user->uid > 0 && $user->uid !== $account->uid) {
+    return;
+  }
+
+  if (module_exists('wmd4') && !empty($edit['is_new']) && !empty($edit['init'])) {
+    include_once(drupal_get_path('module', 'wmd4') . '/wmd4.util.inc');
+    $ldap_vars = _wmd4_get_ldap_variables();
+    $displayname = '';
+    if ($ldap_vars !== FALSE) {
+      foreach ($ldap_vars as $ldap_var) {
+        if (substr($ldap_var, 0, 19) == 'wa_ldap_displayname') {
+          $displayname = trim(substr($ldap_var, strpos($ldap_var, ':') + 1));
+          break;
+        }
+      }
+    }
+    if (!empty($displayname)) {
+      db_update('users')
+        ->fields(array('name' => $displayname))
+        ->condition('uid', $account->uid)
+        ->execute();
+    }
+  }
+}
+
+/*
+ * implements stanford_soe_r25 hook_stanford_soe_r25_fullcalendar_limit_alter
+ * allows us to limit the FullCalendar javascript libraries allowable
+ * date ranges for reservation based upon the user's site admin status
+ */
+function se3_hartley_stanford_soe_r25_fullcalendar_limit_alter(&$calendar_limit) {
+  if (!empty($calendar_limit['room']) && substr($calendar_limit['room'], 0, 3) == 'mh0') {
+    if (user_access('administer stanford r25')) {
+      $calendar_limit['year'] = date('Y') + 3;
+    }
+    else {
+      $month = date('n');
+      $year = date('Y');
+      if ($month < 10) {
+        $calendar_limit = array('month' => 12, 'year' => $year);
+      }
+      else {
+        $calendar_limit = array('month' => 12, 'year' => $year + 1);
+      }
+    }
+  }
+}
+
+/*
+ * implements stanford_soe_r25 hook_stanford_soe_r25_isbillable_alter
+ * when we configure a room in the stanford_soe_r25 module to be billable
+ * by adding a billing group code, that module will invoke this hook
+ * allowing this module to override it for internal users.
+ */
+function se3_hartley_stanford_soe_r25_isbillable_alter(&$is_billable) {
+  if ($is_billable) {
+    $se3_user = _se3_hartley_is_se3_user();
+    if ($se3_user) {
+      $is_billable = FALSE;
+    }
+  }
+}
+
+// a "webapp" to allow the Hartley admin to download a monthly CSV
+// spreadsheet of hartley reservations
+function se3_hartley_download($form, &$form_state) {
+
+  // let user pick month and year for download
+  $curMonth = intval(date('n')) - 1;
+  $form['se3_hartley_download_month'] = array(
+    '#type' => 'select',
+    '#title' => t('Month'),
+    '#options' => array(
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ),
+    '#default_value' => $curMonth,
+    '#required' => TRUE,
+  );
+
+  $year_array = array();
+  $curYear = intval(date('Y'));
+  for ($year = 2016; $year <= $curYear; $year++) {
+    $year_array[$year] = strval($year);
+  }
+
+  $form['se3_hartley_download_year'] = array(
+    '#type' => 'select',
+    '#title' => t('Year'),
+    '#options' => $year_array,
+    '#default_value' => $year_array[$curYear],
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Download'),
+  );
+
+  return $form;
+}
+
+// make sure user chose a valid month and year no earlier than December 2016
+function se3_hartley_download_validate($form, &$form_state) {
+  $year = intval($form_state['values']['se3_hartley_download_year']);
+  $month = intval($form_state['values']['se3_hartley_download_month']);
+  if (empty($form_state['values']['se3_hartley_download_year']) ||
+    !isset($form_state['values']['se3_hartley_download_month']) ||
+    intval($form_state['values']['se3_hartley_download_year']) < 2016 ||
+    intval($form_state['values']['se3_hartley_download_month']) < 0 ||
+    intval($form_state['values']['se3_hartley_download_month']) > 11
+  ) {
+    form_set_error('se3_hartley_download', 'Please choose a valid month and year.');
+  }
+  else {
+    if (intval($form_state['values']['se3_hartley_download_year'] == 2016) &&
+      intval($form_state['values']['se3_hartley_download_month']) < 11
+    ) {
+      form_set_error('se3_hartley_download', 'Downloads are not available prior to December 2016');
+    }
+  }
+}
+
+// returns an attribute value from the reservations XML received from 25Live
+function _se3_hartley_get_value($result, $key, $attrib) {
+  $value = '';
+  if (!empty($result['vals'][$result['index'][$attrib][$key]]['value'])) {
+    $value = $result['vals'][$result['index'][$attrib][$key]]['value'];
+  }
+  return $value;
+}
+
+// submit processing for our download form
+function se3_hartley_download_submit($form, &$form_state) {
+  // make sure we can access stanford_soe_r25 module functions
+  module_load_include('module', 'stanford_soe_r25');
+
+  // build the appropriate date range for the 25Live request
+  $year = intval($form_state['values']['se3_hartley_download_year']);
+  $month = intval($form_state['values']['se3_hartley_download_month']) + 1;
+  $days = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+  $month_str = ($month < 10) ? '0' . strval($month) : strval($month);
+  $start = strval($year) . $month_str . '01';
+  $end = strval($year) . $month_str . strval($days);
+  $output = array();
+
+  // for each of our 3 Hartley locations (for which we have the 25Live location
+  // ids), request the reservations as xml from the 25Live API.
+  foreach (array('1675', '1860', '1861') as $space_id) {
+    $args = 'space_id=' . $space_id . '&scope=extended&start_dt=' . $start . '&end_dt=' . $end;
+    $result = _stanford_soe_r25_api_call('download', NULL, NULL, $args);
+    $space_output = array();
+    if ($result && !empty($result['index']['R25:RESERVATION_ID']) &&
+      is_array($result['index']['R25:RESERVATION_ID'])
+    ) {
+      // build an array of reservation events
+      foreach ($result['index']['R25:RESERVATION_ID'] as $key => $value) {
+        $startdate = DateTime::createFromFormat(DATE_W3C,
+          _se3_hartley_get_value($result, $key, 'R25:RESERVATION_START_DT'));
+        $enddate = DateTime::createFromFormat(DATE_W3C,
+          _se3_hartley_get_value($result, $key, 'R25:RESERVATION_END_DT'));
+        $space_output[] = array(
+          'timestamp' => $startdate->getTimestamp(),
+          'start' => $startdate->format("l, F j, Y g:i a"),
+          'end' => $enddate->format("l, F j, Y g:i a"),
+          'space' => _se3_hartley_get_value($result, $key, 'R25:SPACE_NAME'),
+          'event' => _se3_hartley_get_value($result, $key, 'R25:EVENT_NAME'),
+          'count' => _se3_hartley_get_value($result, $key, 'R25:EXPECTED_COUNT'),
+          'event_state' => _se3_hartley_get_value($result, $key, 'R25:STATE_NAME'),
+          'event_id' => _se3_hartley_get_value($result, $key, 'R25:EVENT_ID'),
+          'key' => $value,
+          'cost' => 0,
+          'contact' => '',
+          'pta_number' => '',
+          'pta_auth' => '',
+          'food' => '',
+          'billable' => '',
+          'cleanup' => '',
+          'first_time' => '',
+        );
+      }
+
+      // for each reservation, get additional attribute information from the returned xml
+      if (!empty($result['index']['R25:ATTRIBUTE_NAME']) && is_array($result['index']['R25:ATTRIBUTE_NAME'])) {
+        foreach ($result['index']['R25:ATTRIBUTE_NAME'] as $key => $value) {
+          $reverse = array_reverse($space_output, TRUE);
+          foreach ($reverse as $idx_key => $idx_val) {
+            if ($value > $reverse[$idx_key]['key']) {
+              $output_key = '';
+              switch ($result['vals'][$value]['value']) {
+                case 'SE3 Booking Contact Info':
+                  $output_key = 'contact';
+                  break;
+                case 'SE3 Hartley PTA':
+                  $output_key = 'pta_number';
+                  break;
+                case 'SE3 Hartley Signature Authority':
+                  $output_key = 'pta_auth';
+                  break;
+                case 'SE3 Hartley Food':
+                  $output_key = 'food';
+                  break;
+                case 'SE3 Hartley Billable':
+                  $output_key = 'billable';
+                  break;
+                case 'SE3 Hartley Cleanup':
+                  $output_key = 'cleanup';
+                  break;
+                case 'SE3 Hartley First Time User':
+                  $output_key = 'first_time';
+                  break;
+              }
+              if (!empty($output_key)) {
+                $space_output[$idx_key][$output_key] =
+                  $result['vals'][$result['index']['R25:ATTRIBUTE_VALUE'][$key]]['value'];
+              }
+              break;
+            }
+          }
+        }
+      }
+    }
+    $output = array_merge($output, $space_output);
+  }
+
+  // for billable reservations, get price sheet information from 25Live
+  foreach ($output as $idx => $reservation) {
+    if (!empty($reservation['billable']) &&
+      $reservation['billable'] == 'T'
+    ) {
+      $eventid = $reservation['event_id'];
+      $result = _stanford_soe_r25_api_call('billing-get', NULL, NULL, $eventid);
+      if ($result) {
+        if (!empty($result['index']['R25:BILL_ITEM_TYPE_NAME']) &&
+          is_array($result['index']['R25:BILL_ITEM_TYPE_NAME'])
+        ) {
+          foreach ($result['index']['R25:BILL_ITEM_TYPE_NAME'] as $key => $value) {
+            if (!empty($result['vals'][$value]['value']) &&
+              $result['vals'][$value]['value'] === 'GRAND TOTAL'
+            ) {
+              if (!empty($result['index']['R25:TOTAL_CHARGE'][$key]) &&
+                !empty($result['vals'][$result['index']['R25:TOTAL_CHARGE'][$key]]['value'])
+              ) {
+                $output[$idx]['cost'] =
+                  $result['vals'][$result['index']['R25:TOTAL_CHARGE'][$key]]['value'];
+              }
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // unless the results array is empty, output the information as csv
+  if (empty($output)) {
+    drupal_set_message('No reservations were found.', 'error');
+  }
+  else {
+    usort($output, '_se3_hartley_timestamp_sort');
+    header('Content-Type: application/excel');
+    header('Content-Disposition: attachment; filename="hartley_' . $year . '_' . $month . '.csv"');
+    $mc_array = array(
+      'Event Name',
+      'Location',
+      'Start Date',
+      'End Date',
+      'Confirmed?',
+      'Contact',
+      'PTA Number',
+      'PTA Auth',
+      'Cost',
+      'Attendees',
+      'Food',
+      'Cleanup',
+      'Billable',
+      'First Time'
+    );
+    $fp = fopen('php://output', 'w');
+    fputcsv($fp, $mc_array);
+    foreach ($output as $res) {
+      $mc_array = array(
+        $res['event'],
+        $res['space'],
+        $res['start'],
+        $res['end'],
+        $res['event_state'],
+        $res['contact'],
+        $res['pta_number'],
+        $res['pta_auth'],
+        $res['cost'],
+        $res['count'],
+        $res['food'],
+        $res['cleanup'],
+        $res['billable'],
+        $res['first_time'],
+      );
+      fputcsv($fp, $mc_array, ',', '"');
+    }
+    fclose($fp);
+    exit;
+    //drupal_set_message('Reservation download complete!');
+  }
+}
+
+// sort our array by timestamp
+function _se3_hartley_timestamp_sort($a, $b) {
+  if (!is_array($a) || !is_array($b) || empty($a['timestamp']) || empty($b['timestamp']) ||
+    $a['timestamp'] === $b['timestamp']
+  ) {
+    return 0;
+  }
+  return ($a['timestamp'] < $b['timestamp']) ? -1 : 1;
+}

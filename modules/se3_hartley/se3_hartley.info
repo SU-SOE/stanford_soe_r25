@@ -1,0 +1,6 @@
+name = SE3 Hartley Reservation Form
+description = Customizes the stanford_soe_r25 room reservation form for Hartley
+package = Stanford
+version = 7.x-1.0
+core = 7.x
+scripts[] = se3_hartley.js
