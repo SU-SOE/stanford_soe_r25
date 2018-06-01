@@ -303,7 +303,7 @@ function stanford_soe_r25_block_view($delta = "") {
 
             // get the reservation form and render it into the block
             $form = drupal_get_form("stanford_soe_r25_reservation", $room_id, $capacity, $external_display, $can_book['external_acct']);
-            $block['subject'] = t("Reserve") . " " . $rooms[$room_id]['display_name'];
+            $block['subject'] = t("Request") . " " . $rooms[$room_id]['display_name'];
             $block['content'] = drupal_render($form);
             // otherwise, if this room authenticates externally, get the auth link from the external auth module
           }

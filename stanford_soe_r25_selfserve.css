@@ -77,6 +77,13 @@
   margin-top: 20px;
 }
 
+.form-item .form-item-stanford-soe-r25-booking-date-date .description,
+.form-item .form-item-stanford-soe-r25-booking-date-time .description,
+.form-item .form-item-stanford-soe-r25-booking-enddate-date .description,
+.form-item .form-item-stanford-soe-r25-booking-enddate-time .description {
+  display: none;
+}
+
 #stanford-r25-room-info #stanford-r25-room-photo {
   display: block;
   width: 100%;

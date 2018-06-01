@@ -297,7 +297,7 @@ function stanford_soe_r25_reservation($form, &$form_state, $room = '', $max_head
   // submit button for the reservation!
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Reserve'),
+    '#value' => t('Request'),
   );
 
   // display some reservation instructions if available, replacing
