@@ -17,6 +17,16 @@
     margin-top: 10px;
 }
 
+#stanford-soe-r25-reservation .form-type-checkbox input.form-checkbox {
+  margin-top: 5px;
+  vertical-align: top;
+}
+
+#stanford-soe-r25-reservation .form-type-checkbox label {
+  width: 90%;
+}
+
+
 #calendar thead, #calendar thead th {
     background: #f5f5f5 none repeat scroll 0 0;
     color: #333;
