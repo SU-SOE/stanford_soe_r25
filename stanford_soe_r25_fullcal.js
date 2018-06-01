@@ -7,15 +7,15 @@ var qtip = false;  // assume we don't have the qtip library to start
     $(document).ready(function () {
 
 	    // try to prevent double form-submits when user double-clicks
-        $("#stanford-r25-reservation").submit(function(e){
+        $("#stanford-soe-r25-reservation").submit(function(e){
             $('.form-submit').attr('disabled','disabled');
         });
 
         // set the date field in the reserve form as the initial focus for the form
-        $('#edit-stanford-r25-booking-date-datepicker-popup-0').focus();
+        $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').focus();
 
         // if we are coming back from a reservation, check cookies for date to bring the user back to
-        var defaultDate = readCookie("stanford-r25-date");
+        var defaultDate = readCookie("stanford-soe-r25-date");
         if (defaultDate === null) {
             // if no cookie, see if a date was set by Drupal from a URL parameter
             if (Drupal.settings.hasOwnProperty("stanfordR25ParamDate")) {
@@ -26,10 +26,10 @@ var qtip = false;  // assume we don't have the qtip library to start
             }
         }
         // cookie would be a single-use thing, so delete it
-        deleteCookie("stanford-r25-date");
+        deleteCookie("stanford-soe-r25-date");
 
         // if we are coming back from  a reservation, check cookies for the calendar view
-        var defaultView = readCookie("stanford-r25-view");
+        var defaultView = readCookie("stanford-soe-r25-view");
         if (defaultView === null) {
             // if no cookie, see if a view was set by Drupal from a URL parameter
             if (Drupal.settings.hasOwnProperty("stanfordR25ParamView")) {
@@ -53,7 +53,7 @@ var qtip = false;  // assume we don't have the qtip library to start
             }
         }
         // delete single-use cookie from reservation
-        deleteCookie("stanford-r25-view");
+        deleteCookie("stanford-soe-r25-view");
 
         // get the romm id set on the server in Drupal
         var stanford_soe_r25_room = Drupal.settings.stanfordR25Room;
@@ -62,7 +62,7 @@ var qtip = false;  // assume we don't have the qtip library to start
         if (Drupal.settings.stanfordR25Qtip == 'qtip' && Drupal.settings.stanfordR25Access == 1 && Drupal.settings.stanfordR25Status > 0) {
             qtip = true;
         }
-        
+
         // get the room status to see if it is enabled
         var stanford_soe_r25_status = Drupal.settings.stanfordR25Status;
 
@@ -79,8 +79,8 @@ var qtip = false;  // assume we don't have the qtip library to start
                 selectConstraint = {};
             }
         }
-        
-        // some rooms constrain how far into the future a user can reserve. 
+
+        // some rooms constrain how far into the future a user can reserve.
         var calendarLimit = new Date(parseInt(Drupal.settings.stanfordR25CalendarLimitYear),
             parseInt(Drupal.settings.stanfordR25CalendarLimitMonth));
 
@@ -95,13 +95,13 @@ var qtip = false;  // assume we don't have the qtip library to start
         }
 
         // as mentioned above, when the user submits a reservation requests, save the date and calendar view to cookies
-        $('#stanford-r25-reservation').submit(function (event) {
+        $('#stanford-soe-r25-reservation').submit(function (event) {
             var view = $('#calendar').fullCalendar('getView');
-            document.cookie = "stanford-r25-view=" + view.name;
-            document.cookie = "stanford-r25-date=" + $('#edit-stanford-r25-booking-date-datepicker-popup-0').val();
+            document.cookie = "stanford-soe-r25-view=" + view.name;
+            document.cookie = "stanford-soe-r25-date=" + $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val();
             return true;
         });
-        
+
         // configure the fullcalendar plugin
         $('#calendar').fullCalendar({
             allDaySlot: false,
@@ -162,7 +162,7 @@ var qtip = false;  // assume we don't have the qtip library to start
                     room_id: stanford_soe_r25_room,
                 },
                 error: function () {
-                    $('#stanford-r25-self-serve-msg').html('Unable to retrieve room schedule from 25Live.');
+                    $('#stanford-soe-r25-self-serve-msg').html('Unable to retrieve room schedule from 25Live.');
                 },
             },
             // set up which calendar controls we want to show
@@ -183,12 +183,12 @@ var qtip = false;  // assume we don't have the qtip library to start
             // in the reservation form and set the focus to the required headcount field. Also display an error alert
             // if the user tries to select more than the meximum minutes duration
             select: function (start, end) {
-                $('#edit-stanford-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
-                $('#edit-stanford-r25-booking-date-timeEntry-popup-1').val(start.format('hh:mm a'));
+                $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val(start.format('hh:mm a'));
                 // account for multi-day rooms that have an end date/time instead of a duration
                 if (multiDay) {
-                    $('#edit-stanford-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
-                    $('#edit-stanford-r25-booking-enddate-timeEntry-popup-1').val(end.format('hh:mm a'));
+                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
+                    $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val(end.format('hh:mm a'));
                 } else {
                     var duration = end.diff(start, 'minutes');
                     if (maxDuration > 0 && duration > maxDuration) {
@@ -201,10 +201,10 @@ var qtip = false;  // assume we don't have the qtip library to start
                         alert('Maximum booking duration is ' + maxStr + '. For longer please contact a department administrator.');
                     } else {
                         var duration_index = (duration / 30) - 1;
-                        $('#edit-stanford-r25-booking-duration').val(duration_index);
+                        $('#edit-stanford-soe-r25-booking-duration').val(duration_index);
                      }
                 }
-                $('#edit-stanford-r25-booking-headcount').focus();
+                $('#edit-stanford-soe-r25-booking-headcount').focus();
             },
             // set whether the calendar is selectable, as defined up above
             selectable: selectable,
@@ -236,4 +236,3 @@ var qtip = false;  // assume we don't have the qtip library to start
 
 
 })(jQuery);
-
