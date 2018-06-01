@@ -5,16 +5,17 @@
  */
 
 #stanford-r25-reservation {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #stanford-r25-reservation .form-item {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #stanford-r25-reservation .form-submit {
-    margin-top: 10px;
+  margin: 20px 0;
+  width: 100%;
 }
 
 #stanford-soe-r25-reservation .form-type-checkbox input.form-checkbox {
@@ -28,20 +29,20 @@
 
 
 #calendar thead, #calendar thead th {
-    background: #f5f5f5 none repeat scroll 0 0;
-    color: #333;
+  background: #f5f5f5 none repeat scroll 0 0;
+  color: #333;
 }
 
 #block-stanford-soe-r25-stanford-soe-r25-reserve,
 #block-block-2 {
-    border: none;
-    border-top: 3px solid #bbb;
-    border-bottom: 1px solid #bbb;
-    box-shadow: none;
-    background: #eee;
-    min-height: 20px;
-    padding: 20px;
-    border-radius: 0 0 4px 4px;
+  border: none;
+  border-top: 3px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  box-shadow: none;
+  background: #eee;
+  min-height: 20px;
+  padding: 20px;
+  border-radius: 0 0 4px 4px;
 }
 
 #block-stanford-soe-r25-stanford-soe-r25-reserve h2 {
@@ -56,33 +57,33 @@
 }
 
 #block-stanford-soe-r25-stanford-soe-r25-room-info {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 #stanford-r25-room-detail {
-    background: #eee;
-    padding: 20px;
-    border-radius: 0 0 4px 4px;
+  background: #eee;
+  padding: 20px;
+  border-radius: 0 0 4px 4px;
 }
 
 #stanford-r25-room-info {
-    border-radius: 0 0 4px 4px;
-    border: 1px solid #ddd;
-    margin-bottom: 30px;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
 }
 
 #stanford-r25-room-info #stanford-r25-room-photo {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 #stanford-r25-room-detail #stanford-r25-room-comments,
 #stanford-r25-room-detail #stanford-r25-room-capacity,
 #stanford-r25-room-detail #stanford-r25-room-features {
-    margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 .se3-hide {
-    display: none;
+  display: none;
 }
