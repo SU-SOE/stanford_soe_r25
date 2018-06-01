@@ -10,7 +10,6 @@ function tt_form_stanford_soe_r25_reservation_alter(&$form, &$form_state, $form_
   $form['stanford_soe_r25_booking_headcount']['#weight'] = -2;
   $form['stanford_soe_r25_booking_attr144']['#weight'] = -1;
   $form['stanford_soe_r25_booking_reason']['#title'] = 'Event Title';
-  $form['stanford_soe_r25_booking_date']['#title'] = 'Start Date';
   $form['stanford_soe_r25_booking_attr182']['#title'] = 'Event Details';
   //$form['stanford_soe_r25_booking_headcount']['#type'] = 'hidden';
   //$form['stanford_soe_r25_booking_headcount']['#value'] = 1;
