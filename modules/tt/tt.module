@@ -2,8 +2,8 @@
 
 function tt_form_stanford_soe_r25_reservation_alter(&$form, &$form_state, $form_id) {
   $form['stanford_soe_r25_booking_reason']['#title'] = 'Event Title';
-  $form['stanford_soe_r25_booking_headcount']['#type'] = 'hidden';
-  $form['stanford_soe_r25_booking_headcount']['#value'] = 1;
+  //$form['stanford_soe_r25_booking_headcount']['#type'] = 'hidden';
+  //$form['stanford_soe_r25_booking_headcount']['#value'] = 1;
   $form['submit']['#prefix'] = '<span>By clicking the Reserve button, I confirm that I have read and agree to the <a href="https://insidesoe.stanford.edu/science-and-engineering-quad/policies-rates">Facility Rental Policy</a></span><br />';
   $form['stanford_soe_r25_booking_attr144']['#suffix'] = '<div class="form-item"><span class="description">E.g., 1234567-123-ABCDE (Case sensitive)</span></div>';
   $form['stanford_soe_r25_booking_attr182']['#suffix'] = '<div class="form-item"><span class="description">E.g., Mac or PC</span></div>';
