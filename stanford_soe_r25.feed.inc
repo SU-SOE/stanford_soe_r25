@@ -193,7 +193,7 @@ function _stanford_soe_r25_feed($get_room_id = NULL) {
               $items[$key]['start']) . '">Click to cancel reservation</a>';
         }
         if ($approver) {
-          $items[$key]['tip'] .= '<br /><a href="https://25live.collegenet.com/stanford/#details&obj_type=event&obj_id=' . $items[$key]['event_id'] .
+          $items[$key]['tip'] .= '<br /><a href="https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $items[$key]['event_id'] .
             '">Click to manage in 25Live</a>';
         }
       }
