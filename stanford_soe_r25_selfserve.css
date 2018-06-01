@@ -13,11 +13,6 @@
   margin-bottom: 0;
 }
 
-#stanford-r25-reservation .form-submit {
-  margin: 20px 0;
-  width: 100%;
-}
-
 #stanford-soe-r25-reservation .form-type-checkbox input.form-checkbox {
   margin-top: 5px;
   vertical-align: top;
@@ -82,6 +77,12 @@
 #stanford-r25-room-detail #stanford-r25-room-capacity,
 #stanford-r25-room-detail #stanford-r25-room-features {
   margin: 0 0 1em 0;
+}
+
+
+input#edit-submit--2 {
+  margin: 20px 0;
+  width: 100%;
 }
 
 .se3-hide {
