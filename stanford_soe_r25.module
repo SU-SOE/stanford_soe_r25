@@ -208,7 +208,7 @@ function _stanford_soe_r25_can_book($room_id) {
         $can_book['can_book'] = TRUE;
       }
       else {
-        // if the user can't book by Drupal permission, and the room supports 
+        // if the user can't book by Drupal permission, and the room supports
         // external accounts, then check the user that way
         if ($rooms[$room_id]['authentication'] == stanford_soe_r25_AUTH_EXTERN_ACCT ||
           $rooms[$room_id]['authentication'] == stanford_soe_r25_AUTH_EITHER_ACCT
@@ -407,9 +407,10 @@ function stanford_soe_r25_block_view($delta = "") {
         'format' => NULL
       ));
       $block['subject'] = '';
-      $block['content'] = check_markup($content, $readonly['format']);
+      $block['content'] = check_markup($content, 'full_html');
     }
   }
+  //print_r($block); die ();
   return $block;
 }
 
