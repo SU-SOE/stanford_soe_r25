@@ -80,7 +80,9 @@
   border-style: none;
   color: #FFFFFF;
 }
-
+.description:before {
+  margin: 0;
+}
 #stanford-soe-r25-reservation input.form-submit:hover {
   background-color: #333333;
   background-image: none;
@@ -116,6 +118,23 @@
   margin: 0 0 1em 0;
 }
 
+.form-item {
+  margin: 0;
+}
+.form-item-stanford-soe-r25-booking-attr144,
+.form-item-stanford-soe-r25-booking-attr141,
+.form-item-stanford-soe-r25-booking-attr182 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.form-item-stanford-soe-r25-booking-reason,
+.form-item-stanford-soe-r25-booking-attr191,
+.form-item-stanford-soe-r25-booking-headcount,
+.form-item-stanford-soe-r25-booking-attr166 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 input#edit-submit--2 {
   margin: 20px 0;
