@@ -69,7 +69,8 @@
 
 #edit-stanford-soe-r25-booking-date,
 #edit-stanford-soe-r25-booking-enddate {
-  border: 1px #8c1515 solid;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #ddd;
   padding: 5px;
 }
 
