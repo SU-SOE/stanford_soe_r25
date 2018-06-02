@@ -145,3 +145,9 @@ input#edit-submit--2 {
 .se3-hide {
   display: none;
 }
+
+.qtip-default {
+  border: 1px solid #8c1515;
+  background-color: #ffeac8;
+  color: #555;
+}
