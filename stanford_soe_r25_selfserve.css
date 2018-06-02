@@ -74,6 +74,25 @@
   padding: 5px;
 }
 
+#stanford-soe-r25-reservation input.form-submit {
+  background-color: #B1040E;
+  background-image: none;
+  border-style: none;
+  color: #FFFFFF;
+}
+
+#stanford-soe-r25-reservation input.form-submit:hover {
+  background-color: #333333;
+  background-image: none;
+  border-style: none;
+  color: #FFFFFF;
+}
+
+.starttime,
+.endtime {
+  color: #8c1515;
+}
+
 .form-item.form-item-stanford-soe-r25-booking-enddate {
   margin-top: 20px;
 }
