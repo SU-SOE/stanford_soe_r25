@@ -52,6 +52,27 @@
   letter-spacing: 0.02em;
 }
 
+@media (max-width: 979px) and (min-width: 768px) {
+  .page-r25 .row-fluid .span4 {
+    width: 65%;
+  }
+
+  .page-r25 #sidebar-second {
+    width: 99%;
+    margin-left: 36%;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-r25 #block-stanford-soe-r25-stanford-soe-r25-reserve {
+    width: auto;
+  }
+
+  .page-r25 #sidebar-second {
+    width: auto;
+    margin-left: 0;
+  }
+}
 #block-stanford-soe-r25-stanford-soe-r25-room-info {
   margin-bottom: 15px;
 }
@@ -144,7 +165,7 @@
 }
 
 .form-item .description {
-l ine-height: 1em;
+  line-height: 1em;
 }
 
 label {
