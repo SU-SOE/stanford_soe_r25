@@ -183,29 +183,37 @@ var qtip = false;  // assume we don't have the qtip library to start
             // in the reservation form and set the focus to the required headcount field. Also display an error alert
             // if the user tries to select more than the meximum minutes duration
             select: function (start, end) {
-              //start = start.setUTCHours(7,0,0,0);
-              //alert(start);
-
-                $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
-                $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val('07:00 am');
-                // account for multi-day rooms that have an end date/time instead of a duration
-                if (multiDay) {
-                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
-                    $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val('07:00 pm');
-                } else {
-                    var duration = end.diff(start, 'minutes');
-                    if (maxDuration > 0 && duration > maxDuration) {
-                        var maxStr = '';
-                        if (maxDuration > 120) {
-                            maxStr = (maxDuration / 60) + ' hours';
-                        } else {
-                            maxStr = maxDuration + ' minutes';
-                        }
-                        alert('Maximum booking duration is ' + maxStr + '. For longer please contact a department administrator.');
-                    } else {
-                        var duration_index = (duration / 30) - 1;
-                        $('#edit-stanford-soe-r25-booking-duration').val(duration_index);
-                     }
+                // if we are on the month view set the times to be 7am to 7pm and make sure the start and end dates match.
+                if ($('.fc-month-button').hasClass('fc-state-active')) {
+                  $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                  $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val('07:00 am');
+                  // account for multi-day rooms that have an end date/time instead of a duration
+                  if (multiDay) {
+                      $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                      $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val('07:00 pm');
+                  }
+                }else {
+                  $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                  $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val(start.format('hh:mm a'));
+                  // account for multi-day rooms that have an end date/time instead of a duration
+                  if (multiDay) {
+                      $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
+                      $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val(end.format('hh:mm a'));
+                  } else {
+                      var duration = end.diff(start, 'minutes');
+                      if (maxDuration > 0 && duration > maxDuration) {
+                          var maxStr = '';
+                          if (maxDuration > 120) {
+                              maxStr = (maxDuration / 60) + ' hours';
+                          } else {
+                              maxStr = maxDuration + ' minutes';
+                          }
+                          alert('Maximum booking duration is ' + maxStr + '. For longer please contact a department administrator.');
+                      } else {
+                          var duration_index = (duration / 30) - 1;
+                          $('#edit-stanford-soe-r25-booking-duration').val(duration_index);
+                       }
+                  }
                 }
                 $('#edit-stanford-soe-r25-booking-headcount').focus();
             },
