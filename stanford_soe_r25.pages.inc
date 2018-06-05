@@ -921,7 +921,7 @@ function _stanford_soe_r25_cancel_reservation($form, &$form_state, $room_id, $ev
       else {
         $body[] = ' for the reservation starting ' . $startdate->format("l, F j, Y g:i a");
       }
-      $subject = 'Room reservation ' . $opout;
+      $subject = strtoupper('Room reservation ' . $opout);
       $params = array(
         'body' => $body,
         'subject' => $subject
