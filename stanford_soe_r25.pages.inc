@@ -647,7 +647,7 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
       $body[0] .= ' requiring your approval.';
       $body[] = 'You may view this request in 25Live and confirm or deny it at this link (requires you first be logged in to 25Live): ';
       $body[] = 'https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
-      $body[] = $result['vals'][$result['index']['R25:EVENT_REFERENCE_ID'][0]]['value'];
+      $body[] = '';
     }
     else {
       if ($state == 2) {
@@ -669,6 +669,7 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
       }
     }
     else {
+      $body[] = "Reference: " . $result['vals'][$result['index']['R25:EVENT_LOCATOR'][0]]['value'];
       $body[] = "Start Date: " . $date->format("l, F j, Y g:i a");
       $enddate = DateTime::createFromFormat(DATE_W3C, $form_state['storage']['stanford_soe_r25_booking']['dates']['end']);
       $body[] = "End Date: " . $enddate->format("l, F j, Y g:i a");
