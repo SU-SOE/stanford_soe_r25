@@ -905,7 +905,7 @@ function _stanford_soe_r25_cancel_reservation($form, &$form_state, $room_id, $ev
       $email_list = _stanford_soe_r25_build_event_email_list($result, $secgroup_id, $additional);
       global $user;
       $body = array();
-      $body[] = 'A Room Reservation ' . $opout . ' request was sent by ' . $user->name;
+      $body[] = 'A Room Reservation ' . $opout . ' request was sent by ' . $user->name . ', ' . $user->mail . ', Reference: ' . $result['vals'][$result['index']['R25:EVENT_LOCATOR'][0]]['value'];
       $body[] = ' for "' . $title . '" in room ' . $rooms[$room_id]['display_name'];
       $startdate = DateTime::createFromFormat(DATE_W3C, $start);
       if ($event_count > 1) {
