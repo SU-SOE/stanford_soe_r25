@@ -790,49 +790,51 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
 
   //TODO: make sure we create a propper admin selection for refreshing or deleting rooms in batch process.
   if ((string) $form_state['values']['display_name'] == 'TEMPLATE') {
+    //read in csv file that has all the rooms needed for the site
     $csvData = file_get_contents('sites/default/modules/stanford/stanford_soe_r25/r25-rooms.csv');
     $lines = explode(PHP_EOL, $csvData);
     $r25_rooms = array();
+
     foreach ($lines as $line) {
         $r25_rooms[] = str_getcsv($line);
     }
-    // print '<pre>'; print_r($r25_rooms); print '</pre>';
-    // print '<pre>'; print_r($form_state['values']); print '</pre>';
-
+    //populate the rooms.
     foreach ($r25_rooms as $room) {
-      $machine_name = (string) strtolower(str_replace(' ', '_', $room[1]));
-      $fields = array(
-        'machine_name' => $machine_name,
-        'display_name' => (string) $room[1],
-        'spud_name' => (string) $form_state['values']['spud_name'],
-        'space_id' => (string) $room[0],
-        'email_list' => (string) $form_state['values']['email_list'],
-        'created' => (string) $form_state['values']['created'],
-        'status' => (int) $form_state['values']['status'],
-        'caltype' => (int) $form_state['values']['caltype'],
-        'max_hours' => (int) $form_state['values']['max_hours'],
-        'location_info' => _stanford_soe_r25_update_room_info($form_state['values']['space_id']),
-        'default_view' => (int) $form_state['values']['default_view'],
-        'description_as_title' => (int) $form_state['values']['description_as_title'],
-        'permalink' => (int) $form_state['values']['permalink'],
-        'honor_blackouts' => (int) $form_state['values']['honor_blackouts'],
-        'approver_secgroup_name' => (string) $form_state['values']['approver_secgroup_name'],
-        'approver_secgroup_id' => (int) $form_state['values']['approver_secgroup_id'],
-        'email_confirms_and_cancels' => (int) $form_state['values']['email_confirms_and_cancels'],
-        'authentication' => (int) $form_state['values']['authentication'],
-        'multi_day' => (int) $form_state['values']['multi_day'],
-        'postprocess_booking' => (int) $form_state['values']['postprocess_booking'],
-        'override_booking_instructions' => array(
-          'value' => $form_state['values']['override_booking_instructions']['value'],
-          'format' => $form_state['values']['override_booking_instructions']['format']
-        ),
-        'event_attributes' => (string) $form_state['values']['event_attributes'],
-        'event_attribute_fields' => _stanford_soe_r25_update_event_attribute_fields($form_state['values']['event_attributes']),
-        'contact_attr' => (string) $form_state['values']['contact_attr'],
-        'contact_attr_field' => _stanford_soe_r25_update_event_attribute_fields($form_state['values']['contact_attr'], TRUE),
-        'auto_billing_code' => (string) $form_state['values']['auto_billing_code'],
-      );
-      _stanford_soe_r25_room_config_save($fields);
+      if (isset($room[1])) {
+        $machine_name = (string) strtolower(str_replace(' ', '_', $room[1]));
+        $fields = array(
+          'machine_name' => $machine_name,
+          'display_name' => (string) $room[1],
+          'spud_name' => (string) $form_state['values']['spud_name'],
+          'space_id' => (string) $room[0],
+          'email_list' => (string) $form_state['values']['email_list'],
+          'created' => (string) $form_state['values']['created'],
+          'status' => (int) $form_state['values']['status'],
+          'caltype' => (int) $form_state['values']['caltype'],
+          'max_hours' => (int) $form_state['values']['max_hours'],
+          'location_info' => _stanford_soe_r25_update_room_info($form_state['values']['space_id']),
+          'default_view' => (int) $form_state['values']['default_view'],
+          'description_as_title' => (int) $form_state['values']['description_as_title'],
+          'permalink' => (int) $form_state['values']['permalink'],
+          'honor_blackouts' => (int) $form_state['values']['honor_blackouts'],
+          'approver_secgroup_name' => (string) $form_state['values']['approver_secgroup_name'],
+          'approver_secgroup_id' => (int) $form_state['values']['approver_secgroup_id'],
+          'email_confirms_and_cancels' => (int) $form_state['values']['email_confirms_and_cancels'],
+          'authentication' => (int) $form_state['values']['authentication'],
+          'multi_day' => (int) $form_state['values']['multi_day'],
+          'postprocess_booking' => (int) $form_state['values']['postprocess_booking'],
+          'override_booking_instructions' => array(
+            'value' => $form_state['values']['override_booking_instructions']['value'],
+            'format' => $form_state['values']['override_booking_instructions']['format']
+          ),
+          'event_attributes' => (string) $form_state['values']['event_attributes'],
+          'event_attribute_fields' => _stanford_soe_r25_update_event_attribute_fields($form_state['values']['event_attributes']),
+          'contact_attr' => (string) $form_state['values']['contact_attr'],
+          'contact_attr_field' => _stanford_soe_r25_update_event_attribute_fields($form_state['values']['contact_attr'], TRUE),
+          'auto_billing_code' => (string) $form_state['values']['auto_billing_code'],
+        );
+        _stanford_soe_r25_room_config_save($fields);
+      }
     }
     $form_state['redirect'] = stanford_soe_r25_MENU_PATH . '/list';
   }
@@ -845,9 +847,12 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
     }
 
     foreach ($r25_rooms as $room) {
-      $machine_name = (string) strtolower(str_replace(' ', '_', $room[1]));
-      _stanford_soe_r25_room_config_delete_room($machine_name);
+      if (isset($room[1])) {
+        $machine_name = (string) strtolower(str_replace(' ', '_', $room[1]));
+        _stanford_soe_r25_room_config_delete_room($machine_name);
+      }
     }
+    $form_state['redirect'] = stanford_soe_r25_MENU_PATH . '/list';
   }
   else {
     $fields = array(

@@ -215,7 +215,7 @@ var qtip = false;  // assume we don't have the qtip library to start
                        }
                   }
                 }
-                $('#edit-stanford-soe-r25-booking-headcount').focus();
+                $('#edit-stanford-soe-r25-booking-reason').focus();
             },
             // set whether the calendar is selectable, as defined up above
             selectable: selectable,
