@@ -183,11 +183,14 @@ var qtip = false;  // assume we don't have the qtip library to start
             // in the reservation form and set the focus to the required headcount field. Also display an error alert
             // if the user tries to select more than the meximum minutes duration
             select: function (start, end) {
+              //start = start.setUTCHours(7,0,0,0);
+              //alert(start);
+
                 $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
                 $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val('07:00 am');
                 // account for multi-day rooms that have an end date/time instead of a duration
                 if (multiDay) {
-                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
                     $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val('07:00 pm');
                 } else {
                     var duration = end.diff(start, 'minutes');
