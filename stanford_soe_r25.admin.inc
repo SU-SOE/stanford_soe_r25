@@ -787,6 +787,8 @@ function _stanford_soe_r25_room_config_validate($form, &$form_state) {
 
 // save the room configuation; currently saves to a room array stored in the variables table
 function _stanford_soe_r25_room_config_submit($form, &$form_state) {
+
+  //TODO: make sure we create a propper admin selection for refreshing or deleting rooms in batch process.
   if ((string) $form_state['values']['display_name'] == 'TEMPLATE') {
     $csvData = file_get_contents('sites/default/modules/stanford/stanford_soe_r25/r25-rooms.csv');
     $lines = explode(PHP_EOL, $csvData);
