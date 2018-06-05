@@ -647,7 +647,7 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
       $body[0] .= ' requiring your approval.';
       $body[] = 'You may view this request in 25Live and confirm or deny it at this link (requires you first be logged in to 25Live): ';
       $body[] = 'https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
-      $body[] = '<pre>' . print_r($result); . '</pre>';
+      $body[] = '<pre>' . print_r($result) . '</pre>';
     }
     else {
       if ($state == 2) {
