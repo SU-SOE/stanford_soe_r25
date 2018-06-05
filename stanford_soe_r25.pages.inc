@@ -646,15 +646,15 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
       $subject = 'Room Reservation Request - ACTION REQUIRED';
       $body[0] .= ' requiring your approval.';
       $body[] = 'You may view this request in 25Live and confirm or deny it at this link (requires you first be logged in to 25Live): ';
-      $body[] = 'https://25live.collegenet.com/stanford/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
-      $body[] = '';
+      $body[] = 'https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
+      $body[] = '<pre>' . print_r($result); . '</pre>';
     }
     else {
       if ($state == 2) {
         // this is the email for a confirmed booking
         $subject = 'Room Reservation';
         $body[0] .= '.';
-        $body[] = 'View the reservation at: https://25live.collegenet.com/stanford/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
+        $body[] = 'View the reservation at: https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
       }
     }
     $body[] = "Room: " . $form_state['storage']['stanford_soe_r25_booking']['room']['display_name'];
@@ -673,7 +673,7 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
       $enddate = DateTime::createFromFormat(DATE_W3C, $form_state['storage']['stanford_soe_r25_booking']['dates']['end']);
       $body[] = "End Date: " . $enddate->format("l, F j, Y g:i a");
     }
-    $body[] = "Reason: " . $form_state['values']['stanford_soe_r25_booking_reason'];
+    $body[] = "Event Title: " . $form_state['values']['stanford_soe_r25_booking_reason'];
     $body[] = "Requested by: " . $res_username . " " . $res_usermail;
     if ($estimated_charge > 0) {
       $body[] = "Estimated Fee: $" . $estimated_charge;
@@ -701,7 +701,7 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
     $event_id = 0;
     if (!empty($result['index']['R25:EVENT_ID'][0]) && !empty($result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'])) {
       $event_id = $result['vals'][$result['index']['R25:EVENT_ID'][0]]['value'];
-      $body[] = 'failed reservation at: https://25live.collegenet.com/stanford/#details&obj_type=event&obj_id=' . $event_id;
+      $body[] = 'failed reservation at: https://25live.collegenet.com/stanfordt/#details&obj_type=event&obj_id=' . $event_id;
       _stanford_soe_r25_api_call('delete', NULL, NULL, $event_id);
     }
   }
