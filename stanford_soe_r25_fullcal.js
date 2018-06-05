@@ -68,7 +68,7 @@ var qtip = false;  // assume we don't have the qtip library to start
 
         // the calendar is selectable by the user if the room is bookable and the user has access
         var multiDay = false;  // typically do not allow multi-day reservation
-        var selectConstraint = {start: '06:00', end: '22:00'};  // limit selection to "normal" hours
+        var selectConstraint = {start: '07:00', end: '19:00'};  // limit selection to "normal" hours
         var selectable = false;  // value of selectable will determine if user can select timeslots from fullcalendar
         if (parseInt(stanford_soe_r25_status) > 1 && parseInt(Drupal.settings.stanfordR25Access) == 1) {
             // in this case, the room is reservable and the user has access to reserve it
@@ -184,11 +184,11 @@ var qtip = false;  // assume we don't have the qtip library to start
             // if the user tries to select more than the meximum minutes duration
             select: function (start, end) {
                 $('#edit-stanford-soe-r25-booking-date-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
-                $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val(start.format('hh:mm a'));
+                $('#edit-stanford-soe-r25-booking-date-timeEntry-popup-1').val('07:00 am');
                 // account for multi-day rooms that have an end date/time instead of a duration
                 if (multiDay) {
-                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(end.format('YYYY-MM-DD'));
-                    $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val(end.format('hh:mm a'));
+                    $('#edit-stanford-soe-r25-booking-enddate-datepicker-popup-0').val(start.format('YYYY-MM-DD'));
+                    $('#edit-stanford-soe-r25-booking-enddate-timeEntry-popup-1').val('07:00 pm');
                 } else {
                     var duration = end.diff(start, 'minutes');
                     if (maxDuration > 0 && duration > maxDuration) {

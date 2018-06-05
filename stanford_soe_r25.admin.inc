@@ -833,7 +833,8 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
       _stanford_soe_r25_room_config_save($fields);
     }
     $form_state['redirect'] = stanford_soe_r25_MENU_PATH . '/list';
-  }else if ((string) $form_state['values']['display_name'] == 'DELETE') {
+  }
+  else if ((string) $form_state['values']['display_name'] == 'DELETE') {
     $csvData = file_get_contents('sites/default/modules/stanford/stanford_soe_r25/r25-rooms.csv');
     $lines = explode(PHP_EOL, $csvData);
     $r25_rooms = array();
@@ -845,7 +846,8 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
       $machine_name = (string) strtolower(str_replace(' ', '_', $room[1]));
       _stanford_soe_r25_room_config_delete_room($machine_name);
     }
-  }else {
+  }
+  else {
     $fields = array(
       'machine_name' => (string) $form_state['values']['machine_name'],
       'display_name' => (string) $form_state['values']['display_name'],

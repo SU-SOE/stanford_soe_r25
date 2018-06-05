@@ -1,4 +1,33 @@
-# stanford_soe_r25
+# [Stanford SoE R25](https://github.com/SU-SOE/stanford_soe_r25)
+##### Version: 7.x-1.0-dev
+
+Maintainers: [minorwm](https://github.com/minorwm),[boznik](https://github.com/boznik),  [josephgknox](https://github.com/josephgknox)
+
+Changelog: [Changelog.txt](CHANGELOG.txt)
+
+Description
+---
+
+The Stanford SoE Helper module provides the custom code for the SoE school site.
+
+
+Sub Modules
+---
+
+**[Stanford People Spotlight](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight)**
+This module provides the _People Spotlight_ content type.
+
+- Nodes path is at: /spotlight/
+
+**[Stanford People Spotlight Administration](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_adminstration)**
+This module provides manage content for _People Spotlight_ content types.
+
+**[Stanford People Spotlight Layouts](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_layouts)**
+This module provides the context and layouts for _People Spotlight_.
+
+**[Stanford People Spotlight Views](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_views)**
+This module provides views for _People Spotlight_.
+
 
 1. Introduction
 This module connects a Drupal site via RESTFUL web API to Collegenet's R25
