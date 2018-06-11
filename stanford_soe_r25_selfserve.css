@@ -160,6 +160,12 @@
   margin-bottom: 1em;
 }
 
+.form-item-stanford-soe-r25-booking-attr141,
+.form-item-stanford-soe-r25-booking-attr166 {
+  float: left;
+  margin-right: 10px;
+}
+
 .container-inline-date {
   border-top: 1px solid #bbb;
   padding-top: 5px;

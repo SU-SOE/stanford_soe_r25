@@ -1004,6 +1004,7 @@ function _stanford_soe_r25_update_event_attribute_fields($attr_list, $contact = 
           $attr_id = $attr_seg;
         }
       }
+      //print '<pre>'; print_r($attr_id); print '</pre>';
       $results = _stanford_soe_r25_api_call('evatrb', NULL, NULL, $attr_id);
       if ($results) {
         $field_info[$attr_id] = array(

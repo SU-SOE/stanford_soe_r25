@@ -1,7 +1,7 @@
 <?php
 
 function tt_form_stanford_soe_r25_reservation_alter(&$form, &$form_state, $form_id) {
-  //print '<pre>'; print_r($form_state); print '</pre>'; die();
+  //print '<pre>'; print_r($form['stanford_soe_r25_booking_attr141']); print '</pre>'; die();
   $form['stanford_soe_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_soe_r25_booking_date']['#weight'] = -10;
   $form['stanford_soe_r25_booking_duration']['#weight'] = -9;
@@ -15,9 +15,16 @@ function tt_form_stanford_soe_r25_reservation_alter(&$form, &$form_state, $form_
   $form['stanford_soe_r25_booking_attr191']['#title'] = 'Primary Organization';
   //$form['stanford_soe_r25_booking_headcount']['#type'] = 'hidden';
   //$form['stanford_soe_r25_booking_headcount']['#value'] = 1;
+  $form['stanford_soe_r25_booking_attr141']['#type'] = 'radios';
+  $form['stanford_soe_r25_booking_attr141']['#options'] = array(1 => 'Yes', 0 => 'No');
+  $form['stanford_soe_r25_booking_attr141']['#default_value'] = variable_get('stanford_soe_r25_booking_attr141', 0);
+  $form['stanford_soe_r25_booking_attr166']['#type'] = 'radios';
+  $form['stanford_soe_r25_booking_attr166']['#options'] = array(1 => 'Yes', 0 => 'No');
+  $form['stanford_soe_r25_booking_attr166']['#default_value'] = variable_get('stanford_soe_r25_booking_attr141', 0);
+  $form['stanford_soe_r25_booking_attr178']['#suffix'] = '<div class="form-item"><span class="description">if unsure, please put N/A</span></div>';
   $form['submit']['#prefix'] = '<span>By clicking the Request button, I confirm that I have read and agree to the <a href="https://insidesoe.stanford.edu/science-and-engineering-quad/policies-rates">Facility Rental Policy</a></span><br />';
   $form['stanford_soe_r25_booking_attr144']['#suffix'] = '<div class="form-item"><span class="description">E.g., 1234567-123-ABCDE (Case sensitive)</span></div>';
-  $form['stanford_soe_r25_booking_attr182']['#suffix'] = '<div class="form-item"><span class="description">E.g. Reservation spans multiple days; Breakout spaces needed</span></div>';
+  $form['stanford_soe_r25_booking_attr198']['#suffix'] = '<div class="form-item"><span class="description">E.g. Reservation spans multiple days; Breakout spaces needed</span></div>';
   $form['stanford_soe_r25_booking_date']['#suffix'] = '<div class="starttime">Start time includes set-up time</div>';
   $form['stanford_soe_r25_booking_enddate']['#suffix'] = '<div class="endtime">End time includes break-down time</div>';
   $form['stanford_soe_r25_booking_attr182']['#maxlength'] = 80;
