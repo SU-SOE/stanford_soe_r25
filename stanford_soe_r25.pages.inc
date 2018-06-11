@@ -475,9 +475,10 @@ function stanford_soe_r25_reservation_submit($form, &$form_state) {
   $attr_insert = '';
   $attr_str = file_get_contents(drupal_get_path('module', 'stanford_soe_r25') . '/stanford_soe_r25_reserve_attr.xml');
   $room = $form_state['storage']['stanford_soe_r25_booking']['room'];
+
   if (!empty($room['event_attribute_fields'])) {
     foreach ($room['event_attribute_fields'] as $key => $value) {
-      if (!empty($form_state['values']['stanford_soe_r25_booking_attr' . $key])) {
+      if (isset($form_state['values']['stanford_soe_r25_booking_attr' . $key])) {
         $attr_temp = str_replace('[r25_attr_id]', $key, $attr_str);
         $attr_temp = str_replace('[r25_attr_type]', $value['type'], $attr_temp);
         $attr_temp = str_replace('[r25_attr_value]', $form_state['values']['stanford_soe_r25_booking_attr' . $key], $attr_temp);
