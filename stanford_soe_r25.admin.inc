@@ -468,27 +468,27 @@ function _stanford_soe_r25_room_config($form, &$form_state, $roomid = NULL) {
       'display_name' => '',
       'caltype' => 2,
       'spud_name' => '',
-      'space_id' => '',
-      'email_list' => '',
+      'space_id' => '1309',
+      'email_list' => 'trinag@stanford.edu',
       'created' => format_date(time()),
-      'status' => 1,
-      'max_hours' => 2,
-      'default_view' => 2,
+      'status' => 2,
+      'max_hours' => 12,
+      'default_view' => 3,
       'description_as_title' => 0,
-      'permalink' => 0,
+      'permalink' => 1,
       'honor_blackouts' => 0,
       'approver_secgroup_name' => '',
       'approver_secgroup_id' => 0,
       'authentication' => 1,
-      'multi_day' => 0,
-      'event_attributes' => '',
+      'multi_day' => 1,
+      'event_attributes' => '191*,144*,178*,198,141,166',
       'contact_attr' => '',
       'postprocess_booking' => 0,
       'auto_billing_code' => '',
-      'email_confirms_and_cancels' => 0,
+      'email_confirms_and_cancels' => 1,
       'override_booking_instructions' => array(
-        'value' => '',
-        'format' => filter_default_format()
+        'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
+        'format' => 'full_html'
       )
     );
   }
@@ -812,7 +812,7 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
           'status' => (int) $form_state['values']['status'],
           'caltype' => (int) $form_state['values']['caltype'],
           'max_hours' => (int) $form_state['values']['max_hours'],
-          'location_info' => _stanford_soe_r25_update_room_info($form_state['values']['space_id']),
+          'location_info' => _stanford_soe_r25_update_room_info((string) $room[0]),
           'default_view' => (int) $form_state['values']['default_view'],
           'description_as_title' => (int) $form_state['values']['description_as_title'],
           'permalink' => (int) $form_state['values']['permalink'],
@@ -833,8 +833,8 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
           'contact_attr_field' => _stanford_soe_r25_update_event_attribute_fields($form_state['values']['contact_attr'], TRUE),
           'auto_billing_code' => (string) $form_state['values']['auto_billing_code'],
         );
-        _stanford_soe_r25_room_config_save($fields);
       }
+      _stanford_soe_r25_room_config_save($fields);
     }
     $form_state['redirect'] = stanford_soe_r25_MENU_PATH . '/list';
   }
@@ -896,6 +896,7 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
 function _stanford_soe_r25_update_room_info($space_id = NULL) {
   $room_info = array();
   $default_layout = 0;
+  print '<pre>'; print_r($space_id); print '</pre>';
   if (!empty($space_id)) {
     // get the room info using the api
     $results = _stanford_soe_r25_api_call('roominfo', NULL, NULL, $space_id);
@@ -919,6 +920,8 @@ function _stanford_soe_r25_update_room_info($space_id = NULL) {
       $room_info['layout_instruction'] = empty($results['index']['R25:LAYOUT_INSTRUCTION'][$default_layout]) ? NULL :
         empty($results['vals'][$results['index']['R25:LAYOUT_INSTRUCTION'][$default_layout]]['value']) ? NULL :
           $results['vals'][$results['index']['R25:LAYOUT_INSTRUCTION'][$default_layout]]['value'];
+
+          //print '<pre>'; print_r($results['vals'][$results['index']['R25:LAYOUT_INSTRUCTION'][$default_layout]]); print '</pre>';
       // build a list of features for the room layout
       $layout_features = '';
       $first_feature = TRUE;
