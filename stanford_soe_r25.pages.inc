@@ -64,7 +64,7 @@ function _stanford_soe_r25_calendar_page($room = NULL) {
           'defer' => TRUE
         ));
         drupal_add_js(array('stanfordR25Spud' => $rooms[$room]['spud_name']), 'setting');
-        drupal_add_js(drupal_get_path('module', 'stanford_soe_r25') . '/stanford_soe_r25_spud.js');
+        drupal_add_js(drupal_get_path('module', 'stanford_soe_r25') . '/js/stanford_soe_r25_spud.js');
       }
       else {
         // if the calendar is FullCalendar, output links to the required javascript files and css
@@ -78,8 +78,6 @@ function _stanford_soe_r25_calendar_page($room = NULL) {
           drupal_add_js(libraries_get_path('jquery.qtip') . '/jquery.qtip.js');
           drupal_add_js(array('stanfordR25Qtip' => 'qtip'), 'setting');
         }
-        drupal_add_js(drupal_get_path('module', 'stanford_soe_r25') . '/stanford_soe_r25_fullcal.js');
-        drupal_add_css(drupal_get_path('module', 'stanford_soe_r25') . '/stanford_soe_r25_selfserve.css');
 
         // add the div where the calendar will be embedded
         $output['calendar'] = array(
