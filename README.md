@@ -31,14 +31,14 @@ JavaScript plugin, and use a Drupal form to create non-recurring events in
 
 2. Installation:
 
-  2.1 Basic installation and dependencies
+  - 2.1 Basic installation and dependencies
 
 Install and enable this module as you would any other Drupal module. You must
 also have the encrypt and libraries modules installed and configured, encrypt
 to protect your 25Live admin credentials and libraries to easily locate
 FullCalendar and qTip modules.
 
-2.2 Optional Javascript libraries
+  - 2.2 Optional Javascript libraries
 
 The latest version of FullCalendar, found at http://fullcalendar.io/, is not
 required but is recommended, especially if you would like users to select
@@ -50,7 +50,7 @@ who made the reservation) in a tool tip on a FullCalendar display.
 
 Both can be installed in the libraries directory.
 
-2.3 Permissions
+  - 2.3 Permissions
 
 Permissions are created for roles that can administer this module's
 configuration, roles that can view calendars, and roles that can
@@ -61,7 +61,7 @@ reserve rooms.
 Configuration forms can be found on three tabs (credentials, configuration,
 and list rooms) on your site at /admin/config/system/stanford_soe_r25.
 
-3.1 Credentials tab
+  - 3.1 Credentials tab
 
 You need a username and password for the 25Live admin console. This account
 should have the rights to view room information, events lists, create an event,
@@ -82,7 +82,7 @@ call is successful or not.
 
 You will also see if the system detected the FullCalendar and qTip libraries.
 
-3.2 Configuration tab
+  - 3.2 Configuration tab
 
 On the configuration tab you will enter a set of organization and event codes
 needed by the 25Live API. You can find some of these codes by viewing an event
@@ -115,7 +115,7 @@ On this form you can also set:
 * link text to be used for externally authenticated (non-Drupal) users, along with a description
   of the hooks needed to do this. See, also, the user0_webauth submodule for more info
 
-3.3 List Rooms tab
+  - 3.3 List Rooms tab
 
 This tab will display all rooms you have configured for this module along with
 edit and delete links for each. A room's display name is also a link to its
