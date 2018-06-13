@@ -37,21 +37,15 @@ JavaScript plugin, and use a Drupal form to create non-recurring events in
 
   - 2.2 Optional Javascript libraries
 
-The latest version of FullCalendar, found at http://fullcalendar.io/, is not
-required but is recommended, especially if you would like users to select
-reservation timeslots from a calendar.
+    The latest version of FullCalendar, found at http://fullcalendar.io/, is not required but is recommended, especially if you would like users to select reservation timeslots from a calendar.
 
-The latest version of qTip 2, found at http://qtip2.com/, is not required but
-is recommended if you would like to display event information (headcount and
-who made the reservation) in a tool tip on a FullCalendar display.
+    The latest version of qTip 2, found at http://qtip2.com/, is not required but is recommended if you would like to display event information (headcount and who made the reservation) in a tool tip on a FullCalendar display.
 
-Both can be installed in the libraries directory.
+    Both can be installed in the libraries directory.
 
   - 2.3 Permissions
 
-Permissions are created for roles that can administer this module's
-configuration, roles that can view calendars, and roles that can
-reserve rooms.
+    Permissions are created for roles that can administer this module's configuration, roles that can view calendars, and roles that can reserve rooms.
 
 3. Configuration:
 
@@ -60,40 +54,25 @@ and list rooms) on your site at /admin/config/system/stanford_soe_r25.
 
   - 3.1 Credentials tab
 
-You need a username and password for the 25Live admin console. This account
-should have the rights to view room information, events lists, create an event,
-and delete an event.
+    You need a username and password for the 25Live admin console. This account should have the rights to view room information, events lists, create an event, and delete an event.
 
-You will also need your organization's base URL for accessing the 25Live web
-services API, for example
-https://webservices.collegenet.com/r25ws/wrd/<organization>/run
-where organization is the name of your school, such as stanford
+    You will also need your organization's base URL for accessing the 25Live web services API, for example https://webservices.collegenet.com/r25ws/wrd/<organization>/run where organization is the name of your school, such as stanford
 
-You will also need to enter the name of a room photos subdirectory to be created
-under your public Drupal files directory. The module will store room photos there
-pulled from the API.
+    You will also need to enter the name of a room photos subdirectory to be created under your public Drupal files directory. The module will store room photos there pulled from the API.
 
-When you enter your account, password, the URL, and the directory name, the system will
-make a test call to the 25Live Web Services API. You will be notified if the
-call is successful or not.
+    When you enter your account, password, the URL, and the directory name, the system will make a test call to the 25Live Web Services API. You will be notified if the call is successful or not.
 
-You will also see if the system detected the FullCalendar and qTip libraries.
+    You will also see if the system detected the FullCalendar and qTip libraries.
 
   - 3.2 Configuration tab
 
-On the configuration tab you will enter a set of organization and event codes
-needed by the 25Live API. You can find some of these codes by viewing an event
-in 25Live and then calling the following in your web browser:
-https://webservices.collegenet.com/r25ws/wrd/<organization>/run/event.xml?event_locator=<code>
-where <organization> is your school and <code> is the Reference Code for the
-event.
+    On the configuration tab you will enter a set of organization and event codes needed by the 25Live API. You can find some of these codes by viewing an event in 25Live and then calling the following in your web browser: https://webservices.collegenet.com/r25ws/wrd/<organization>/run/event.xml?event_locator=<code> where <organization> is your school and <code> is the Reference Code for the event.
 
-After being prompted for your account name and password (the same credentials
-you entered in the Credentials tab) you should see an XML display.
+    After being prompted for your account name and password (the same credentials you entered in the Credentials tab) you should see an XML display.
 
-Find the r25:organization_id tag for your organization code.
-Find the r25:event_type_id tag for an organization event type code.
-Find the r25:parent_id tag for the parent folder where your new events will be
+    - Find the r25:organization_id tag for your organization code.
+    - Find the r25:event_type_id tag for an organization event type code.
+    - Find the r25:parent_id tag for the parent folder where your new events will be
 stored.
 
 On this form you can also set:
