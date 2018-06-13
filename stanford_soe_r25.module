@@ -833,6 +833,8 @@ function _stanford_soe_r25_security_group_emails($secgroup_id = NULL, $reset = F
   return $list;
 }
 
+// This is where we hook into the reservation form to change things for
+// insidesoe field placement and overrides.
 function stanford_soe_r25_form_stanford_soe_r25_reservation_alter(&$form, &$form_state, $form_id) {
   $form['stanford_soe_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_soe_r25_booking_date']['#weight'] = -10;
