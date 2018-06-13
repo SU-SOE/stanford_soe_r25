@@ -175,4 +175,32 @@ body.page-r25 #calendar thead th {
   color: #333;
 }
 
+form.webform-client-form-564 #edit-submitted-event-start-time-ampm,
+form.webform-client-form-564 #edit-submitted-event-time-finish-ampm,
+form.webform-client-form-564 .form-item-submitted-will-food-be-served,
+form.webform-client-form-564 .form-item-submitted-will-any-in-attendance-be-under-18-years {
+  display: inline;
+}
+
+form.webform-client-form-564 #edit-submitted-event-start-time-ampm input.form-radio,
+form.webform-client-form-564 #edit-submitted-event-start-time-ampm label.option,
+form.webform-client-form-564 #edit-submitted-event-time-finish-ampm input.form-radio,
+form.webform-client-form-564 #edit-submitted-event-time-finish-ampm label.option,
+form.webform-client-form-564 .form-item-submitted-will-food-be-served input.form-radio,
+form.webform-client-form-564 .form-item-submitted-will-food-be-served label.option,
+form.webform-client-form-564 .form-item-submitted-will-any-in-attendance-be-under-18-years input.form-radio,
+form.webform-client-form-564 .form-item-submitted-will-any-in-attendance-be-under-18-years label.option {
+  display: inline;
+}
+
+form.webform-client-form-564 #edit-submitted-will-food-be-served-2,
+form.webform-client-form-564 #edit-submitted-will-any-in-attendance-be-under-18-years-2 {
+  margin-left: 10px;
+}
+
+form.webform-client-form-564 #edit-submitted-event-start-time-ampm,
+form.webform-client-form-564 #edit-submitted-event-time-finish-ampm {
+  margin-left: 10px;
+}
+
 /*# sourceMappingURL=stanford_soe_r25.css.map */

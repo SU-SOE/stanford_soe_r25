@@ -194,3 +194,26 @@ body.page-r25 {
     }
   }
 }
+form.webform-client-form-564 {
+  #edit-submitted-event-start-time-ampm,
+  #edit-submitted-event-time-finish-ampm,
+  .form-item-submitted-will-food-be-served,
+  .form-item-submitted-will-any-in-attendance-be-under-18-years {
+    display: inline;;
+
+    input.form-radio,
+    label.option {
+      display: inline;
+    }
+  }
+
+  #edit-submitted-will-food-be-served-2,
+  #edit-submitted-will-any-in-attendance-be-under-18-years-2 {
+    margin-left: 10px;
+  }
+
+  #edit-submitted-event-start-time-ampm,
+  #edit-submitted-event-time-finish-ampm {
+    margin-left: 10px;
+  }
+}
