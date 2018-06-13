@@ -75,30 +75,20 @@ and list rooms) on your site at /admin/config/system/stanford_soe_r25.
     - Find the r25:parent_id tag for the parent folder where your new events will be
 stored.
 
-On this form you can also set:
-* a login message and url for the reservation form if it is restricted to
-  the non-anonymous role (recommended)
-* a no-permission message to be displayed in lieu of the reservations form to
-  non-anonymous users who do not have permission to make reservations
-* a read-only message to be displayed in lieu of the reservations form for
-  rooms that don't allow reservations
-* reservation instructions that should be displayed as part of the reservation
-  form. You can use the token [max_duration] to insert the maximum booking duration
-  for each room.
-* blackout dates listed in the form "YYYY-MM-DD - YYYY-MM-DD" when this module may not make
-  reservations for rooms marked as honoring blackouts. Does not use 25Live blackout periods
-  because rooms may need to be reservable by other processes such as registrar room assignment.
-* link text to be used for externally authenticated (non-Drupal) users, along with a description
-  of the hooks needed to do this. See, also, the user0_webauth submodule for more info
+    On this form you can also set:
+    - a login message and url for the reservation form if it is restricted to the non-anonymous role (recommended)
+    - a no-permission message to be displayed in lieu of the reservations form to non-anonymous users who do not have permission to make reservations
+    - a read-only message to be displayed in lieu of the reservations form for rooms that don't allow reservations
+    - reservation instructions that should be displayed as part of the reservation form. You can use the token [max_duration] to insert the maximum booking duration for each room.
+    - blackout dates listed in the form "YYYY-MM-DD - YYYY-MM-DD" when this module may not make reservations for rooms marked as honoring blackouts. Does not use 25Live blackout periods because rooms may need to be reservable by other processes such as registrar room assignment.
+    - link text to be used for externally authenticated (non-Drupal) users, along with a description of the hooks needed to do this. See, also, the user0_webauth submodule for more info
 
   - 3.3 List Rooms tab
 
-This tab will display all rooms you have configured for this module along with
-edit and delete links for each. A room's display name is also a link to its
-calendar page. An "Add Room Configuration" link allows creation of new rooms.
+    This tab will display all rooms you have configured for this module along with edit and delete links for each. A room's display name is also a link to its calendar page. An "Add Room Configuration" link allows creation of new rooms.
 
-When creating or editing a room, the following information is collected:
-* the room's display name
+    When creating or editing a room, the following information is collected:
+    - the room's display name
 * the room's machine name - this can be edited when the room is first added to
   the system but is readonly after. The machine name is used in the room page
   URL -- /r25/<machine-name>/calendar -- and is passed as a parameter to the
