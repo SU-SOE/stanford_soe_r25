@@ -17,7 +17,7 @@ Sub Modules
 **[jQuery Update](https://www.drupal.org/project/jquery_update)**
 This module upgrades the version of jQuery in Drupal core to a newer version of jQuery.
 
-**[Stanford Webauth for anonymous Drupal user]**
+**[Stanford Webauth for anonymous Drupal user](https://github.com/SU-SOE/stanford_soe_r25/tree/master/modules/user0_webauth)**
 This module authenticates Stanford users through apache mod_webauth w/o creating Drupal accounts.
 
 
