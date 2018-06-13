@@ -8,25 +8,17 @@ Changelog: [Changelog.txt](CHANGELOG.txt)
 Description
 ---
 
-The Stanford SoE Helper module provides the custom code for the SoE school site.
+The Stanford SoE R25 module connects a Drupal site via RESTFUL web API to Collegenet's R25
+system, which is the backend of the 25Live Room Reservation system.
 
 
 Sub Modules
 ---
+**[jQuery Update](https://www.drupal.org/project/jquery_update)**
+This module upgrades the version of jQuery in Drupal core to a newer version of jQuery.
 
-**[Stanford People Spotlight](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight)**
-This module provides the _People Spotlight_ content type.
-
-- Nodes path is at: /spotlight/
-
-**[Stanford People Spotlight Administration](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_adminstration)**
-This module provides manage content for _People Spotlight_ content types.
-
-**[Stanford People Spotlight Layouts](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_layouts)**
-This module provides the context and layouts for _People Spotlight_.
-
-**[Stanford People Spotlight Views](https://github.com/SU-SWS/stanford_soe_helper/stanford_people_spotlight_views)**
-This module provides views for _People Spotlight_.
+**[Stanford Webauth for anonymous Drupal user]**
+This module authenticates Stanford users through apache mod_webauth w/o creating Drupal accounts.
 
 
 1. Introduction
