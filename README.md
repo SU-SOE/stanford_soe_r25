@@ -31,7 +31,7 @@ JavaScript plugin, and use a Drupal form to create non-recurring events in
 
 2. Installation:
 
-2.1 Basic installation and dependencies
+  2.1 Basic installation and dependencies
 
 Install and enable this module as you would any other Drupal module. You must
 also have the encrypt and libraries modules installed and configured, encrypt
