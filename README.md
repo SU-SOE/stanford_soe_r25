@@ -66,7 +66,7 @@ and list rooms) on your site at /admin/config/system/stanford_soe_r25.
 
   - 3.2 Configuration tab
 
-    On the configuration tab you will enter a set of organization and event codes needed by the 25Live API. You can find some of these codes by viewing an event in 25Live and then calling the following in your web browser: https://webservices.collegenet.com/r25ws/wrd/<organization>/run/event.xml?event_locator=<code> where <organization> is your school and <code> is the Reference Code for the event.
+    On the configuration tab you will enter a set of organization and event codes needed by the 25Live API. You can find some of these codes by viewing an event in 25Live and then calling the following in your web browser: https://webservices.collegenet.com/r25ws/wrd/<organization>/run/event.xml?event_locator=<code> where <organization> is your school and is the Reference Code for the event.
 
     After being prompted for your account name and password (the same credentials you entered in the Credentials tab) you should see an XML display.
 
