@@ -1,7 +1,7 @@
 # [Stanford SoE R25](https://github.com/SU-SOE/stanford_soe_r25)
 ##### Version: 7.x-1.0-dev
 
-Maintainers: [minorwm](https://github.com/minorwm),[boznik](https://github.com/boznik),  [josephgknox](https://github.com/josephgknox)
+Maintainers: [minorwm](https://github.com/minorwm),[ksharp](https://code.stanford.edu/ksharp)
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
