@@ -860,5 +860,16 @@ function stanford_soe_r25_form_stanford_soe_r25_reservation_alter(&$form, &$form
   $form['stanford_soe_r25_booking_date']['#suffix'] = '<div class="starttime">Start time includes set-up time</div>';
   $form['stanford_soe_r25_booking_enddate']['#suffix'] = '<div class="endtime">End time includes break-down time</div>';
   $form['stanford_soe_r25_booking_attr182']['#maxlength'] = 80;
-  array_unshift($form['#validate'], 'tt_stanford_soe_r25_pta_validate');
+  array_unshift($form['#validate'], 'stanford_soe_r25_stanford_soe_r25_pta_validate');
+}
+
+function stanford_soe_r25_stanford_soe_r25_pta_validate($form, &$form_state) {
+  if (preg_match('/;/', $form_state['values']['stanford_soe_r25_booking_reason'])) {
+      form_set_error('stanford_soe_r25_booking_reason', t('Please do not include the ; character in the title of the event.'));
+  }
+
+  $form_state['values']['stanford_soe_r25_booking_attr144'] = trim($form_state['values']['stanford_soe_r25_booking_attr144']);
+  if (!(preg_match('/^(\d{7})\-(\d.*)\-([A-Z]{5})$/', $form_state['values']['stanford_soe_r25_booking_attr144']))) {
+      form_set_error('stanford_soe_r25_booking_attr144', t('Invalid PTA Format. The correct format is Project-Task-Award (e.g. 1234567-123-ABCDE)'));
+  }
 }
