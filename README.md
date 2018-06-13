@@ -33,10 +33,7 @@ JavaScript plugin, and use a Drupal form to create non-recurring events in
 
   - 2.1 Basic installation and dependencies
 
-Install and enable this module as you would any other Drupal module. You must
-also have the encrypt and libraries modules installed and configured, encrypt
-to protect your 25Live admin credentials and libraries to easily locate
-FullCalendar and qTip modules.
+    Install and enable this module as you would any other Drupal module. You must also have the encrypt and libraries modules installed and configured, encrypt to protect your 25Live admin credentials and libraries to easily locate FullCalendar and qTip modules.
 
   - 2.2 Optional Javascript libraries
 
