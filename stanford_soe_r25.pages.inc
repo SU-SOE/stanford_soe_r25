@@ -78,7 +78,7 @@ function _stanford_soe_r25_calendar_page($room = NULL) {
           drupal_add_js(libraries_get_path('jquery.qtip') . '/jquery.qtip.js');
           drupal_add_js(array('stanfordR25Qtip' => 'qtip'), 'setting');
         }
-
+        drupal_add_js(drupal_get_path('module', 'stanford_soe_r25') . '/js/stanford_soe_r25_fullcal.js');
         // add the div where the calendar will be embedded
         $output['calendar'] = array(
           '#type' => 'markup',

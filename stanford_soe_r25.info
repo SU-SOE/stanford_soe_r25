@@ -12,6 +12,5 @@ dependencies[] = date_api
 dependencies[] = date
 dependencies[] = date_popup
 stylesheets[all][] = css/stanford_soe_r25.css
-scripts[] = js/stanford_soe_r25_fullcal.js
 project status url = https://github.com/SU-SOE/stanford_soe_r25
 files[] = stanford_soe_r25.install
