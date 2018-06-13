@@ -63,6 +63,10 @@ body.page-r25 {
     }
   }
 
+  #block-stanford-soe-r25-stanford-soe-r25-reserve {
+      padding: 20px 10px;
+  }
+
   #stanford-r25-room-info {
     border-radius: 0 0 4px 4px;
     border: 1px solid #ddd;
@@ -90,6 +94,9 @@ body.page-r25 {
   #stanford-soe-r25-reservation {
     margin-bottom: 0;
 
+    span {
+
+    }
     .form-type-checkbox {
       label {
         width: 80%;
@@ -143,6 +150,10 @@ body.page-r25 {
         line-height: 1em;
       }
 
+      .readandagree {
+        float: left;
+      }
+      
       label {
         margin-bottom: 3px;
       }
@@ -183,6 +194,19 @@ body.page-r25 {
       margin-bottom: 0.4em;
       margin-right: 10px;
     }
+
+    .form-item-stanford-soe-r25-booking-attr141,
+    .form-item-stanford-soe-r25-booking-attr198,
+    .form-item-stanford-soe-r25-booking-attr178 {
+      margin-top: 20px;
+    }
+
+    #edit-stanford-soe-r25-booking-attr141,
+    #edit-stanford-soe-r25-booking-attr166 {
+      .form-type-radio {
+        margin-top: 0;
+      }
+    }
   }
 
   #calendar {
@@ -194,6 +218,7 @@ body.page-r25 {
     }
   }
 }
+
 form.webform-client-form-564 {
   #edit-submitted-event-start-time-ampm,
   #edit-submitted-event-time-finish-ampm,
