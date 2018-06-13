@@ -6,7 +6,23 @@
 //
 
 body.page-r25 {
+  .qtip-default {
+    border: 1px solid #8c1515;
+    background-color: #fff;
+    color: #555;
+  }
+
+  @media (max-width: 1200px) and (min-width: 979px) {
+    input[type="text"] {
+      width: 93%;
+    }
+  }
+
   @media (max-width: 979px) and (min-width: 768px) {
+    input[type="text"] {
+      width: 65%;
+    }
+
     .row-fluid {
       .span4 {
         width: 65%;
@@ -20,20 +36,14 @@ body.page-r25 {
   }
 
   @media (max-width: 767px) {
-    #block-stanford-soe-r25-stanford-soe-r25-reserve {
-      width: auto;
+    #block-stanford-soe-r25-stanford-soe-r25-reserve, {
+      width: 92%;
     }
 
     #sidebar-second {
       width: auto;
       margin-left: 0;
     }
-  }
-
-  .qtip-default {
-    border: 1px solid #8c1515;
-    background-color: #fff;
-    color: #555;
   }
 
   #block-stanford-soe-r25-stanford-soe-r25-room-info {
@@ -65,6 +75,10 @@ body.page-r25 {
 
   #block-stanford-soe-r25-stanford-soe-r25-reserve {
       padding: 20px 10px;
+
+      @media (max-width: 979px) {
+        padding: 20px;
+      }
   }
 
   #stanford-r25-room-info {
@@ -153,7 +167,7 @@ body.page-r25 {
       .readandagree {
         float: left;
       }
-      
+
       label {
         margin-bottom: 3px;
       }
@@ -193,6 +207,12 @@ body.page-r25 {
       margin-top: 0.4em;
       margin-bottom: 0.4em;
       margin-right: 10px;
+    }
+
+    .form-type-radios {
+      @media (max-width: 768px) and (min-width: 480px) {
+        width: 100%;
+      }
     }
 
     .form-item-stanford-soe-r25-booking-attr141,
