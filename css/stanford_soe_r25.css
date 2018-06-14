@@ -243,6 +243,8 @@ form.webform-client-form-564 #edit-submitted-event-time-finish-ampm {
   margin-left: 10px;
 }
 
+form.webform-client-form-564 #edit-submitted-event-date-month,
+form.webform-client-form-564 #edit-submitted-event-date-day,
 form.webform-client-form-564 #edit-submitted-event-date-year {
   display: none;
 }
