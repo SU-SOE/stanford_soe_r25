@@ -244,9 +244,51 @@ form.webform-client-form-564 #edit-submitted-event-time-finish-ampm {
 }
 
 form.webform-client-form-564 #edit-submitted-event-date-month,
+form.webform-client-form-564 #edit-submitted-event-date-finish-month,
 form.webform-client-form-564 #edit-submitted-event-date-day,
-form.webform-client-form-564 #edit-submitted-event-date-year {
+form.webform-client-form-564 #edit-submitted-event-date-finish-day,
+form.webform-client-form-564 #edit-submitted-event-date-year,
+form.webform-client-form-564 #edit-submitted-event-date-finish-year {
   display: none;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker {
+  width: 200px;
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s,box-shadow linear .2s;
+  -moz-transition: border linear .2s,box-shadow linear .2s;
+  -o-transition: border linear .2s,box-shadow linear .2s;
+  transition: border linear .2s,box-shadow linear .2s;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker .form-item-submitted-event-date-year::after,
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker .form-item-submitted-event-date-finish-year::after,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker .form-item-submitted-event-date-year::after,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker .form-item-submitted-event-date-finish-year::after {
+  content: "Date";
+  font-weight: bold;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker input.webform-calendar,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker input.webform-calendar {
+  float: right;
+  padding: 3px 3px 3px 150px;
 }
 
 /*# sourceMappingURL=stanford_soe_r25.css.map */
