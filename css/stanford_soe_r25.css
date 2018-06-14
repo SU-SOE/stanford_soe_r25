@@ -243,4 +243,8 @@ form.webform-client-form-564 #edit-submitted-event-time-finish-ampm {
   margin-left: 10px;
 }
 
+form.webform-client-form-564 #edit-submitted-event-date-year {
+  display: none;
+}
+
 /*# sourceMappingURL=stanford_soe_r25.css.map */
