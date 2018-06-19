@@ -346,7 +346,9 @@ form.webform-client-form-564 .webform-component--event-time-finish select {
 }
 
 form.webform-client-form-564 .webform-component--event-start-time .form-radios label,
-form.webform-client-form-564 .webform-component--event-time-finish .form-radios label {
+form.webform-client-form-564 .webform-component--event-time-finish .form-radios label,
+form.webform-client-form-564 .webform-component--will-food-be-served .form-radios label,
+form.webform-client-form-564 .webform-component--will-any-in-attendance-be-under-18-years .form-radios label {
   vertical-align: middle;
 }
 
