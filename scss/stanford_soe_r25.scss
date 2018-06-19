@@ -356,9 +356,15 @@ form.webform-client-form-564 {
   .webform-component--event-start-time,
   .webform-component--event-time-finish {
     margin-top: 0;
-    
+
     select {
       width: auto;
+    }
+
+    .form-radios {
+      label {
+        vertical-align: middle;
+      }
     }
   }
 }

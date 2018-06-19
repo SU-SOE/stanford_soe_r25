@@ -345,4 +345,9 @@ form.webform-client-form-564 .webform-component--event-time-finish select {
   width: auto;
 }
 
+form.webform-client-form-564 .webform-component--event-start-time .form-radios label,
+form.webform-client-form-564 .webform-component--event-time-finish .form-radios label {
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=stanford_soe_r25.css.map */
