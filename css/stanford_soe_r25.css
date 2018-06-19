@@ -345,11 +345,11 @@ form.webform-client-form-564 .webform-component--event-time-finish select {
   width: auto;
 }
 
-form.webform-client-form-564 .webform-component--event-start-time .form-radios label,
-form.webform-client-form-564 .webform-component--event-time-finish .form-radios label,
-form.webform-client-form-564 .webform-component--will-food-be-served .form-radios label,
-form.webform-client-form-564 .webform-component--will-any-in-attendance-be-under-18-years .form-radios label {
-  vertical-align: middle;
+form.webform-client-form-564 .webform-component--event-start-time .form-radios input,
+form.webform-client-form-564 .webform-component--event-time-finish .form-radios input,
+form.webform-client-form-564 .webform-component--will-food-be-served .form-radios input,
+form.webform-client-form-564 .webform-component--will-any-in-attendance-be-under-18-years .form-radios input {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=stanford_soe_r25.css.map */

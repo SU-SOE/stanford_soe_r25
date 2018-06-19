@@ -356,7 +356,7 @@ form.webform-client-form-564 {
   .webform-component--event-start-time,
   .webform-component--event-time-finish {
     margin-top: 0;
-    
+
     select {
       width: auto;
     }
@@ -367,8 +367,8 @@ form.webform-client-form-564 {
   .webform-component--will-food-be-served,
   .webform-component--will-any-in-attendance-be-under-18-years {
     .form-radios {
-      label {
-        vertical-align: middle;
+      input {
+        margin-top: 0;
       }
     }
   }
