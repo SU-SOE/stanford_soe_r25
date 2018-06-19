@@ -250,6 +250,12 @@ form.webform-client-form-564 #edit-submitted-event-date-finish-day,
 form.webform-client-form-564 #edit-submitted-event-date-year,
 form.webform-client-form-564 #edit-submitted-event-date-finish-year {
   display: none;
+  width: auto;
+}
+
+form.webform-client-form-564 .webform-component--event-date,
+form.webform-client-form-564 .webform-component--event-date-finish {
+  margin-bottom: 0;
 }
 
 form.webform-client-form-564 .webform-component--event-date .webform-datepicker,
@@ -289,6 +295,54 @@ form.webform-client-form-564 .webform-component--event-date .webform-datepicker 
 form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker input.webform-calendar {
   float: right;
   padding: 3px 3px 3px 150px;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker.picked,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker.picked {
+  width: auto;
+  display: inline-block;
+  height: auto;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555;
+  vertical-align: middle;
+  -webkit-border-radius: none;
+  -moz-border-radius: none;
+  border-radius: none;
+  background-color: none;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker.picked .form-item-submitted-event-date-year::after,
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker.picked .form-item-submitted-event-date-finish-year::after,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker.picked .form-item-submitted-event-date-year::after,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker.picked .form-item-submitted-event-date-finish-year::after {
+  content: none;
+}
+
+form.webform-client-form-564 .webform-component--event-date .webform-datepicker.picked input.webform-calendar,
+form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker.picked input.webform-calendar {
+  float: right;
+  padding: 3px 3px 3px 3px;
+}
+
+form.webform-client-form-564 .webform-component--event-start-time,
+form.webform-client-form-564 .webform-component--event-time-finish {
+  margin-top: 0;
+}
+
+form.webform-client-form-564 .webform-component--event-start-time select,
+form.webform-client-form-564 .webform-component--event-time-finish select {
+  width: auto;
 }
 
 /*# sourceMappingURL=stanford_soe_r25.css.map */

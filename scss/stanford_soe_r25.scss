@@ -269,10 +269,12 @@ form.webform-client-form-564 {
   #edit-submitted-event-date-year,
   #edit-submitted-event-date-finish-year {
     display: none;
+    width: auto;
   }
 
   .webform-component--event-date,
   .webform-component--event-date-finish {
+    margin-bottom: 0;
     .webform-datepicker {
       width: 205px;
       display: inline-block;
@@ -310,6 +312,53 @@ form.webform-client-form-564 {
           padding: 3px 3px 3px 150px;
         }
       }
+
+      &.picked {
+        width: auto;
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #555;
+        vertical-align: middle;
+        -webkit-border-radius: none;
+        -moz-border-radius: none;
+        border-radius: none;
+        background-color: none;
+        border: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        transition: none;
+
+        .form-item-submitted-event-date-year,
+        .form-item-submitted-event-date-finish-year {
+          &::after {
+            content: none;
+          }
+        }
+
+        input {
+          &.webform-calendar {
+            float: right;
+            padding: 3px 3px 3px 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .webform-component--event-start-time,
+  .webform-component--event-time-finish {
+    margin-top: 0;
+    
+    select {
+      width: auto;
     }
   }
 }
