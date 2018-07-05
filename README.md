@@ -176,10 +176,10 @@ If you need to delete all the rooms, go to the Add Room Configuration
 here: "admin/config/system/stanford_soe_r25/list/add" and for the Display Name, use "DELETE_ROOMS".
 
 6. Possible future enhancements:
-  6.1 Make room configurations a content type or attachable to other entities.
-  6.2 Cache room event data retrieved from 25Live. Invalidate cache based
+  - 6.1 Make room configurations a content type or attachable to other entities.
+  - 6.2 Cache room event data retrieved from 25Live. Invalidate cache based
     on time and/or new reservation made.
-  6.3 Edit/Delete events.
-  6.4 Recurring events.
-  6.5 Build on the Restore/Delete Rooms and make it have buttons and uploading csv file to use.
+  - 6.3 Edit/Delete events.
+  - 6.4 Recurring events.
+  - 6.5 Build on the Restore/Delete Rooms and make it have buttons and uploading csv file to use.
 --end--
