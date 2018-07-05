@@ -789,7 +789,7 @@ function _stanford_soe_r25_room_config_validate($form, &$form_state) {
 function _stanford_soe_r25_room_config_submit($form, &$form_state) {
 
   //TODO: make sure we create a propper admin selection for refreshing or deleting rooms in batch process.
-  if ((string) $form_state['values']['display_name'] == 'TEMPLATE') {
+  if ((string) $form_state['values']['display_name'] == 'RESTORE_ROOMS') {
     //read in csv file that has all the rooms needed for the site
     $csvData = file_get_contents('sites/default/modules/stanford/stanford_soe_r25/r25-rooms.csv');
     $lines = explode(PHP_EOL, $csvData);
@@ -838,7 +838,7 @@ function _stanford_soe_r25_room_config_submit($form, &$form_state) {
     }
     $form_state['redirect'] = stanford_soe_r25_MENU_PATH . '/list';
   }
-  else if ((string) $form_state['values']['display_name'] == 'DELETE') {
+  else if ((string) $form_state['values']['display_name'] == 'DELETE_ROOMS') {
     $csvData = file_get_contents('sites/default/modules/stanford/stanford_soe_r25/r25-rooms.csv');
     $lines = explode(PHP_EOL, $csvData);
     $r25_rooms = array();

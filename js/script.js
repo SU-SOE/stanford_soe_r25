@@ -5,7 +5,7 @@
    */
   Drupal.behaviors.stanford_soe_r25 = {
     attach: function (context) {
-      // My code here...
+      // Show the date select fields after a user chooses a date on old reservation form
       $('#edit-submitted-event-date-month').on('change', function (e) {
         $('.webform-component--event-date .webform-datepicker select').show();
         $('.webform-component--event-date .webform-datepicker').addClass('picked');

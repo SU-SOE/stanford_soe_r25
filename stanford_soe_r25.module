@@ -867,7 +867,6 @@ function stanford_soe_r25_form_webform_client_form_564_alter(&$form, &$form_stat
 
   $form['#node']->webform['components'][11]['type'] = 'textfield';
   $form['#node']->webform['components'][13]['type'] = 'textfield';
-  //print '<pre>'; print_r($form['#node']->webform); print '</pre>';
 }
 
 function stanford_soe_r25_stanford_soe_r25_pta_validate($form, &$form_state) {

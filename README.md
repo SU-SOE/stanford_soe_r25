@@ -159,17 +159,27 @@ the main content area of the page.
 
 The system will also generate two blocks: "R25 Room Information" and
 "R25 Room Reservation Form". Both blocks are initially configured to appear
-only on pages matching "r25/*/calendar" but are not initially placed in a
+only on pages matching "r25/\*/calendar" but are not initially placed in a
 region. If room reservations are enabled, it is recommended that the
 reservation block be placed prominently in a sidebar or content region.
+
 
 Both blocks figure out their room_id from the current url and will
 display an error message if placed on other pages.
 
-5. Possible future enhancements:
-5.1 Make room configurations a content type or attachable to other entities.
-5.2 Cache room event data retrieved from 25Live. Invalidate cache based
+5. Restore/Delete Rooms
+
+You can do a Restore of all the rooms from the r25-rooms.csv file by going to the Add Room Configuration
+here: "admin/config/system/stanford_soe_r25/list/add" and for the Display Name, use "RESTORE_ROOMS".
+
+If you need to delete all the rooms, go to the Add Room Configuration
+here: "admin/config/system/stanford_soe_r25/list/add" and for the Display Name, use "DELETE_ROOMS".
+
+6. Possible future enhancements:
+6.1 Make room configurations a content type or attachable to other entities.
+6.2 Cache room event data retrieved from 25Live. Invalidate cache based
     on time and/or new reservation made.
-5.3 Edit/Delete events.
-5.4 Recurring events.
+6.3 Edit/Delete events.
+6.4 Recurring events.
+6.5 Build on the Restore/Delete Rooms and make it have buttons and uploading csv file to use.
 --end--
