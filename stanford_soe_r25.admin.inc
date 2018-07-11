@@ -218,16 +218,16 @@ function _stanford_soe_r25_settings($form, &$form_state) {
       'If multiple modules implement the hook, the value will be set by the last module invoked.',
   );
 
-  // advanced settings for external non-Drupal logins; may require 3rd party contrib module for authentication
-  // sample module for authenticating anonymous users, user0_webauth, is included in this package
+  /*
+   * Advanced settings for external non-Drupal logins;
+   * may require 3rd party contrib module for authentication.
+   * Sample module for authenticating anonymous users, user0_webauth,
+   * is included in this package.
+   */
   $form['external'] = array(
     '#type' => 'fieldset',
     '#title' => 'Advanced Restrictions',
-    '#description' => t('If you need to allow room reservations by users who authenticate through an external ' .
-      'system but who do not get get Drupal accounts (for example, rooms bookable by entire campus versus ' .
-      'rooms bookable only within the organization for which there are Drupal accounts) you must implement ' .
-      'hooks for hook_stanford_soe_r25_external_link and hook_stanford_soe_r25_external_user. See the included ' .
-      'user0_webauth module for an example.'),
+    '#description' => t('If you need to allow room reservations by users who authenticate through an external system but who do not get get Drupal accounts (for example, rooms bookable by entire campus versus rooms bookable only within the organization for which there are Drupal accounts) you must implement hooks for hook_stanford_soe_r25_external_link and hook_stanford_soe_r25_external_user. See the included user0_webauth module for an example.'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
@@ -239,9 +239,7 @@ function _stanford_soe_r25_settings($form, &$form_state) {
   );
   $form['external']['external_contact_info'] = array(
     '#type' => 'markup',
-    '#markup' => 'Contact information for room reservations will blank unless ' .
-      'it is set by an implementation of hook_stanford_soe_r25_external_user_display(&$acct_array). ' .
-      'If multiple modules implement the hook, the value will be set by the first module found.',
+    '#markup' => 'Contact information for room reservations will blank unless it is set by an implementation of hook_stanford_soe_r25_external_user_display(&$acct_array). If multiple modules implement the hook, the value will be set by the first module found.',
   );
 
   $form['stanford_soe_r25_from_email'] = array(
@@ -252,7 +250,10 @@ function _stanford_soe_r25_settings($form, &$form_state) {
     '#required' => TRUE,
   );
 
-  // messages to display if room is not reservable or user has no permission to reserve
+  /**
+   * Messages to display if room is not reservable
+   * or user has no permission to reserve.
+   */
   $default_not_permitted = variable_get('stanford_soe_r25_notpermitted_msg',
     array('value' => '', 'format' => filter_default_format()));
   $form['stanford_soe_r25_notpermitted_msg'] = array(
@@ -272,7 +273,9 @@ function _stanford_soe_r25_settings($form, &$form_state) {
     '#format' => $default_readonly_msg['format'],
   );
 
-  // default booking instructions to appear at bottom or reservation form.
+  /**
+   * Default booking instructions to appear at bottom or reservation form.
+   */
   $default_booking_instr = variable_get('stanford_soe_r25_booking_instructions',
     array('value' => '', 'format' => filter_default_format()));
   $form['stanford_soe_r25_booking_instructions'] = array(
