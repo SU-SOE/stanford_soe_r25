@@ -250,7 +250,7 @@ function _stanford_soe_r25_settings($form, &$form_state) {
     '#required' => TRUE,
   );
 
-  /**
+  /*
    * Messages to display if room is not reservable
    * or user has no permission to reserve.
    */
@@ -273,7 +273,7 @@ function _stanford_soe_r25_settings($form, &$form_state) {
     '#format' => $default_readonly_msg['format'],
   );
 
-  /**
+  /*
    * Default booking instructions to appear at bottom or reservation form.
    */
   $default_booking_instr = variable_get('stanford_soe_r25_booking_instructions',
@@ -286,14 +286,14 @@ function _stanford_soe_r25_settings($form, &$form_state) {
     '#format' => $default_booking_instr['format'],
   );
 
-  // a list of blackout periods during which users will not be able to reserve rooms that
-  // are configured to respect blackouts
+  /*
+   * A list of blackout periods during which users will not be able
+   * to reserve rooms that are configured to respect blackouts.
+   */
   $form['stanford_soe_r25_blackout_dates'] = array(
     '#type' => 'textarea',
     '#title' => t('Blackout Dates'),
-    '#description' => t('A list of blackout periods in the form "YYYY-MM-DD - YYYY-MM-DD" when this module may ' .
-      'not make reservations for rooms marked as honoring blackouts. Does not use 25Live blackout periods ' .
-      'because rooms may need to be reservable by other processes such as registrar room assignment.'),
+    '#description' => t('A list of blackout periods in the form "YYYY-MM-DD - YYYY-MM-DD" when this module may not make reservations for rooms marked as honoring blackouts. Does not use 25Live blackout periods because rooms may need to be reservable by other processes such as registrar room assignment.'),
     '#default_value' => variable_get('stanford_soe_r25_blackout_dates', ''),
   );
 
@@ -306,9 +306,11 @@ function _stanford_soe_r25_settings($form, &$form_state) {
   return $form;
 }
 
-// validate that numeric inputs are, in fact, numeric
+/*
+ * Validate that numeric inputs are, in fact, numeric.
+ */
 function _stanford_soe_r25_settings_validate($form, &$form_state) {
-  // validate numeric entries
+  // Validate numeric entries.
   if (empty($form_state['values']['stanford_soe_r25_org_id']) || !is_numeric($form_state['values']['stanford_soe_r25_org_id'])) {
     form_set_error('stanford_soe_r25_org_id', t('Organization ID must be a number.'));
   }
@@ -319,7 +321,7 @@ function _stanford_soe_r25_settings_validate($form, &$form_state) {
     form_set_error('stanford_soe_r25_parent_event_id', t('Parent Event ID must be a number.'));
   }
 
-  // validate blackout date list
+  // Validate blackout date list.
   if (!empty($form_state['values']['stanford_soe_r25_blackout_dates'])) {
     $blackouts = _stanford_soe_r25_parse_blackout_dates($form_state['values']['stanford_soe_r25_blackout_dates']);
     if (empty($blackouts)) {
@@ -327,15 +329,17 @@ function _stanford_soe_r25_settings_validate($form, &$form_state) {
     }
   }
 
-  // validate email address
+  // Validate email address.
   if (!valid_email_address($form_state['values']['stanford_soe_r25_from_email'])) {
     form_set_error('stanford_soe_r25_from_email', t('Invalid email format.'));
   }
 }
 
-// save the form's inputs to the variables table
+// Save the form's inputs to the variables table.
 function _stanford_soe_r25_settings_submit($form, &$form_state) {
-  // submit function - save all configuration variables from this form to the variables table
+  /**
+   * Submit function - save all configuration variables from this form to the variables table.
+   */
   if (isset($form_state['values']['stanford_soe_r25_org_id'])) {
     variable_set('stanford_soe_r25_org_id', $form_state['values']['stanford_soe_r25_org_id']);
   }
@@ -386,8 +390,10 @@ function _stanford_soe_r25_settings_submit($form, &$form_state) {
   drupal_set_message(t('Configuration saved.'));
 }
 
-// format a table of the rooms that we've configured, with edit and delete buttons
-// based on code found in the encrypt module
+/*
+ * Format a table of the rooms that we've configured, with edit and delete buttons
+ * based on code found in the encrypt module.
+ */
 function _stanford_soe_r25_room_list() {
   $rooms = _stanford_soe_r25_room_config_load();
   $header = array(
@@ -454,7 +460,9 @@ function _stanford_soe_r25_room_list() {
   return $build;
 }
 
-// room configuration form for both adding and editing a room
+/**
+* Room configuration form for both adding and editing a room.
+*/
 function _stanford_soe_r25_room_config($form, &$form_state, $roomid = NULL) {
   $form = array();
   $config = array();
