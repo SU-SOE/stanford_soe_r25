@@ -146,6 +146,7 @@ exclude_paths:
 - "test/**/*"
 - "**/vendor/**/*"
 - "**.min.*"
+- "modules/jquery_update/"
 - "tests/"
 - "spec/"
 - "**/vendor/"
