@@ -92,7 +92,7 @@ body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail {
 body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-comments,
 body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-capacity,
 body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-features {
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
 }
 
 body.page-r25 #stanford-r25-reservation {
@@ -287,7 +287,7 @@ form.webform-client-form-564 .webform-component--event-date .webform-datepicker 
 form.webform-client-form-564 .webform-component--event-date .webform-datepicker .form-item-submitted-event-date-finish-year::after,
 form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker .form-item-submitted-event-date-year::after,
 form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker .form-item-submitted-event-date-finish-year::after {
-  content: "Date";
+  content: 'Date';
   font-weight: bold;
 }
 
@@ -332,7 +332,7 @@ form.webform-client-form-564 .webform-component--event-date-finish .webform-date
 form.webform-client-form-564 .webform-component--event-date .webform-datepicker.picked input.webform-calendar,
 form.webform-client-form-564 .webform-component--event-date-finish .webform-datepicker.picked input.webform-calendar {
   float: right;
-  padding: 3px 3px 3px 3px;
+  padding: 3px;
 }
 
 form.webform-client-form-564 .webform-component--event-start-time,

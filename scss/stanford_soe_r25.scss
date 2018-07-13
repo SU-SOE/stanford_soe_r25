@@ -100,7 +100,7 @@ body.page-r25 {
       #stanford-r25-room-comments,
       #stanford-r25-room-capacity,
       #stanford-r25-room-features {
-        margin: 0 0 1em 0;
+        margin: 0 0 1em;
       }
     }
   }
@@ -298,7 +298,7 @@ form.webform-client-form-564 {
       .form-item-submitted-event-date-year,
       .form-item-submitted-event-date-finish-year {
         &::after {
-          content: "Date";
+          content: 'Date';
           font-weight: bold;
         }
       }
@@ -343,7 +343,7 @@ form.webform-client-form-564 {
         input {
           &.webform-calendar {
             float: right;
-            padding: 3px 3px 3px 3px;
+            padding: 3px;
           }
         }
       }
