@@ -85,6 +85,7 @@ body.page-r25 {
     border-radius: 0 0 4px 4px;
     border: 1px solid #ddd;
     margin-bottom: 30px;
+    float: left;
 
     #stanford-r25-room-photo {
       display: block;
@@ -92,10 +93,11 @@ body.page-r25 {
       height: auto;
     }
 
-    #stanford-r25-room-detail {
+    #stanford-r25-room-details {
       background: #fff;
       padding: 20px;
       border-radius: 0 0 4px 4px;
+      float: left;
 
       #stanford-r25-room-comments,
       #stanford-r25-room-capacity,

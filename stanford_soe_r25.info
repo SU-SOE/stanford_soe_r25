@@ -8,4 +8,3 @@ dependencies[] = stanford_r25
 stylesheets[all][] = css/stanford_soe_r25.css
 scripts[] = js/script.js
 project status url = https://github.com/SU-SOE/stanford_soe_r25
-files[] = stanford_soe_r25.install
