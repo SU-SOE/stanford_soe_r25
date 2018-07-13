@@ -1,0 +1,11 @@
+name = R25 Room Reservations for Stanford SoE Intranet
+description = Interface for room reservations for 25Live/R25 for the Stanford SoE Intranet
+core = 7.x
+package = Stanford
+version = 7.x-1.0-alpha1
+project = stanford_soe_r25
+dependencies[] = stanford_r25
+stylesheets[all][] = css/stanford_soe_r25.css
+scripts[] = js/script.js
+project status url = https://github.com/SU-SOE/stanford_soe_r25
+files[] = stanford_soe_r25.install
