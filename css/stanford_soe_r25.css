@@ -308,9 +308,9 @@ form.webform-client-form-564 .webform-component--event-date-finish .webform-date
   line-height: 20px;
   color: #555;
   vertical-align: middle;
-  -webkit-border-radius: none;
-  -moz-border-radius: none;
-  border-radius: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   background-color: none;
   border: 0;
   -webkit-box-shadow: none;
