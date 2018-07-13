@@ -147,6 +147,7 @@ exclude_paths:
 - "**/vendor/**/*"
 - "**.min.*"
 - "tests/"
+- "node_modules/"
 - "spec/"
 - "**/vendor/"
 - "**.api.php"

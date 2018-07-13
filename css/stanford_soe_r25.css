@@ -312,7 +312,7 @@ form.webform-client-form-564 .webform-component--event-date-finish .webform-date
   -moz-border-radius: none;
   border-radius: none;
   background-color: none;
-  border: none;
+  border: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;

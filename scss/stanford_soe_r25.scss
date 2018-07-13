@@ -272,6 +272,7 @@ form.webform-client-form-564 {
   .webform-component--event-date,
   .webform-component--event-date-finish {
     margin-bottom: 0;
+
     .webform-datepicker {
       width: 205px;
       display: inline-block;
@@ -324,7 +325,7 @@ form.webform-client-form-564 {
         -moz-border-radius: none;
         border-radius: none;
         background-color: none;
-        border: none;
+        border: 0;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
