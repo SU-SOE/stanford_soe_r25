@@ -36,7 +36,7 @@ body.page-r25 {
   }
 
   @media (max-width: 767px) {
-    #block-stanford-soe-r25-stanford-soe-r25-reserve, {
+    #block-stanford-r25-stanford-r25-reserve, {
       width: 92%;
     }
 
@@ -46,13 +46,13 @@ body.page-r25 {
     }
   }
 
-  #block-stanford-soe-r25-stanford-soe-r25-room-info {
+  #block-stanford-r25-stanford-r25-room-info {
     margin-bottom: 15px;
   }
 
-  #block-stanford-soe-r25-stanford-soe-r25-reserve,
-  .block-stanford-soe-r25-stanford-soe-r25-cancel {
-    border: none;
+  #block-stanford-r25-stanford-r25-reserve,
+  .block-stanford-r25-stanford-r25-cancel {
+    border: 0;
     border-top: 3px solid #bbb;
     border-bottom: 1px solid #bbb;
     box-shadow: none;
@@ -64,7 +64,7 @@ body.page-r25 {
     h2 {
       color: #820000;
       font-size: 18px;
-      margin: 0 0 12px 0;
+      margin: 0 0 12px;
       padding: 0;
       text-transform: none;
       line-height: 1em;
@@ -73,12 +73,12 @@ body.page-r25 {
     }
   }
 
-  #block-stanford-soe-r25-stanford-soe-r25-reserve {
-      padding: 20px 10px;
+  #block-stanford-r25-stanford-r25-reserve {
+    padding: 20px 10px;
 
-      @media (max-width: 979px) {
-        padding: 20px;
-      }
+    @media (max-width: 979px) {
+      padding: 20px;
+    }
   }
 
   #stanford-r25-room-info {
@@ -105,12 +105,9 @@ body.page-r25 {
     }
   }
 
-  #stanford-soe-r25-reservation {
+  #stanford-r25-reservation {
     margin-bottom: 0;
 
-    span {
-
-    }
     .form-type-checkbox {
       label {
         width: 80%;
@@ -126,11 +123,11 @@ body.page-r25 {
       background-color: #8c1515;
       background-image: none;
       border-style: none;
-      color: #FFFFFF;
+      color: #fff;
     }
 
-    #edit-stanford-soe-r25-booking-date,
-    #edit-stanford-soe-r25-booking-enddate {
+    #edit-stanford-r25-booking-date,
+    #edit-stanford-r25-booking-enddate {
       padding: 5px;
     }
 
@@ -146,7 +143,7 @@ body.page-r25 {
       border-top: 1px solid #bbb;
       padding-top: 5px;
 
-      .form-item-stanford-soe-r25-booking-enddate {
+      .form-item-stanford-r25-booking-enddate {
         margin-top: 0;
         margin-bottom: 0;
       }
@@ -176,33 +173,33 @@ body.page-r25 {
         display: none;
       }
 
-      .form-item-stanford-soe-r25-booking-date-date,
-      .form-item-stanford-soe-r25-booking-date-time,
-      .form-item-stanford-soe-r25-booking-enddate-date,
-      .form-item-stanford-soe-r25-booking-enddate-time {
+      .form-item-stanford-r25-booking-date-date,
+      .form-item-stanford-r25-booking-date-time,
+      .form-item-stanford-r25-booking-enddate-date,
+      .form-item-stanford-r25-booking-enddate-time {
         .description {
           display: none;
         }
       }
     }
 
-    .form-item-stanford-soe-r25-booking-attr144,
-    .form-item-stanford-soe-r25-booking-attr141,
-    .form-item-stanford-soe-r25-booking-attr182 {
+    .form-item-stanford-r25-booking-attr144,
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr182 {
       margin-top: 1em;
       margin-bottom: 0;
     }
 
-    .form-item-stanford-soe-r25-booking-reason,
-    .form-item-stanford-soe-r25-booking-attr191,
-    .form-item-stanford-soe-r25-booking-headcount,
-    .form-item-stanford-soe-r25-booking-attr166 {
+    .form-item-stanford-r25-booking-reason,
+    .form-item-stanford-r25-booking-attr191,
+    .form-item-stanford-r25-booking-headcount,
+    .form-item-stanford-r25-booking-attr166 {
       margin-top: 1em;
       margin-bottom: 1em;
     }
 
-    .form-item-stanford-soe-r25-booking-attr141,
-    .form-item-stanford-soe-r25-booking-attr166 {
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr166 {
       float: left;
       margin-top: 0.4em;
       margin-bottom: 0.4em;
@@ -215,14 +212,14 @@ body.page-r25 {
       }
     }
 
-    .form-item-stanford-soe-r25-booking-attr141,
-    .form-item-stanford-soe-r25-booking-attr198,
-    .form-item-stanford-soe-r25-booking-attr178 {
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr198,
+    .form-item-stanford-r25-booking-attr178 {
       margin-top: 20px;
     }
 
-    #edit-stanford-soe-r25-booking-attr141,
-    #edit-stanford-soe-r25-booking-attr166 {
+    #edit-stanford-r25-booking-attr141,
+    #edit-stanford-r25-booking-attr166 {
       .form-type-radio {
         margin-top: 0;
       }
@@ -244,7 +241,7 @@ form.webform-client-form-564 {
   #edit-submitted-event-time-finish-ampm,
   .form-item-submitted-will-food-be-served,
   .form-item-submitted-will-any-in-attendance-be-under-18-years {
-    display: inline;;
+    display: inline;
 
     input.form-radio,
     label.option {
