@@ -49,8 +49,8 @@ body.page-r25 .block-stanford-r25-stanford-r25-cancel {
   border-radius: 0 0 4px 4px;
 }
 
-body.page-r25 #block-stanford-r25-stanford-r25-reserve > h2,
-body.page-r25 .block-stanford-r25-stanford-r25-cancel > h2 {
+body.page-r25 #block-stanford-r25-stanford-r25-reserve:first-child,
+body.page-r25 .block-stanford-r25-stanford-r25-cancel:first-child {
   color: #820000;
   font-size: 18px;
   margin: 0 0 12px;
