@@ -84,16 +84,16 @@ body.page-r25 #stanford-r25-room-info #stanford-r25-room-photo {
   height: auto;
 }
 
-body.page-r25 #stanford-r25-room-info #stanford-r25-room-details {
+body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail {
   background: #fff;
   padding: 20px;
   border-radius: 0 0 4px 4px;
   float: left;
 }
 
-body.page-r25 #stanford-r25-room-info #stanford-r25-room-details #stanford-r25-room-comments,
-body.page-r25 #stanford-r25-room-info #stanford-r25-room-details #stanford-r25-room-capacity,
-body.page-r25 #stanford-r25-room-info #stanford-r25-room-details #stanford-r25-room-features {
+body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-comments,
+body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-capacity,
+body.page-r25 #stanford-r25-room-info #stanford-r25-room-detail #stanford-r25-room-features {
   margin: 0 0 1em;
 }
 
