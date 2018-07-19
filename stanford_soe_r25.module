@@ -9,8 +9,8 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_state, $form_id) {
-  // We need to alter the reservation form and add field settings for r25 "Event Attributes" 191,144,178,198,141, and 166.
-
+  // We need to alter the reservation form and add field settings.
+  // The field settings are for r25 "Event Attributes" 191,144,178,198,141, and 166.
   $form['stanford_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_r25_booking_date']['#weight'] = -10;
   $form['stanford_r25_booking_duration']['#weight'] = -9;
@@ -29,18 +29,19 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
   $form['stanford_r25_booking_attr166']['#options'] = array(1 => t('Yes'), 0 => t('No'));
   $form['stanford_r25_booking_attr166']['#default_value'] = variable_get('stanford_r25_booking_attr141', 0);
   $form['stanford_r25_booking_attr178']['#suffix'] = '<div class="form-item"><span class="description">' . t('If unsure, please put N/A') . '</span></div>';
-  $form['submit']['#prefix'] = '<div class="form-item"><span class="readandagree">' . t('By clicking the Request button, I confirm that I have read and agree to the ') . l(t("Facility Rental Policy"), 'https://insidesoe.stanford.edu/science-and-engineering-quad/policies-rates') . '.</span></div>';
+  $form['submit']['#prefix'] = '<div class="form-item"><span class="readandagree">' . t('By clicking the Request button, I confirm that I have read and agree to the') . ' ' . l(t("Facility Rental Policy"), 'https://insidesoe.stanford.edu/science-and-engineering-quad/policies-rates') . '.</span></div>';
   $form['stanford_r25_booking_attr144']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g., 1234567-123-ABCDE (Case sensitive)') . '</span></div>';
   $form['stanford_r25_booking_attr198']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g. Reservation spans multiple days; Breakout spaces needed') . '</span></div>';
   $form['stanford_r25_booking_date']['#suffix'] = '<div class="starttime">' . t('Start time includes set-up time') . '</div>';
   $form['stanford_r25_booking_enddate']['#suffix'] = '<div class="endtime">' . t('End time includes break-down time') . '</div>';
   $form['stanford_r25_booking_attr182']['#maxlength'] = 80;
 
-  // We need this to be first, so the verification happens before the booking takes place.
+  // We need this to be first, for the verification to happen
+  // before the room booking takes place.
   array_unshift($form['#validate'], 'stanford_soe_r25_stanford_r25_pta_validate');
 }
 
- /**
+/**
  * We need to validate the PTA Number.
  *
  * - Throw a validation error message if the ";" character is entered
@@ -52,7 +53,7 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
  *   The form to update.
  * @param string $form_state
  *   Submitted form state.
- */
+*/
 function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
   if (preg_match('/;/', $form_state['values']['stanford_r25_booking_reason'])) {
     form_set_error('stanford_r25_booking_reason', t('Please do not include the ; character in the title of the event.'));
