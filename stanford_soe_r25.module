@@ -36,7 +36,7 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
   $form['stanford_r25_booking_enddate']['#suffix'] = '<div class="endtime">' . t('End time includes break-down time') . '</div>';
   $form['stanford_r25_booking_attr182']['#maxlength'] = 80;
 
-  // We need this to be first, for the verification to happen
+  // We need this to be first for the verification to happen
   // before the room booking takes place.
   array_unshift($form['#validate'], 'stanford_soe_r25_stanford_r25_pta_validate');
 }
