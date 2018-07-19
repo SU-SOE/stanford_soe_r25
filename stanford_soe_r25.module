@@ -60,7 +60,7 @@ function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
     form_set_error('stanford_r25_booking_reason', t('Please do not include the ; character in the title of the event.'));
   }
 
-  $pta_value = 'trim($form_state['values']['stanford_r25_booking_attr144'])';
+  $pta_value = trim($form_state['values']['stanford_r25_booking_attr144']);
   if (!(preg_match('/^(\d{7})\-(\d.*)\-([A-Z]{5})$/', $pta_value))) {
     form_set_error('stanford_r25_booking_attr144', t('Invalid PTA Format. The correct format is Project-Task-Award (e.g. 1234567-123-ABCDE)'));
   }
