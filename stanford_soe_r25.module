@@ -37,15 +37,6 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
 }
 
 /**
- * Change the date fields to textfields for our datepicker.
- */
-function stanford_soe_r25_form_webform_client_form_564_alter(&$form, &$form_state, $form_id) {
-
-  $form['#node']->webform['components'][11]['type'] = 'textfield';
-  $form['#node']->webform['components'][13]['type'] = 'textfield';
-}
-
-/**
  * We need to validate the PTA Number.
  */
 function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
@@ -56,16 +47,5 @@ function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
   $form_state['values']['stanford_r25_booking_attr144'] = trim($form_state['values']['stanford_r25_booking_attr144']);
   if (!(preg_match('/^(\d{7})\-(\d.*)\-([A-Z]{5})$/', $form_state['values']['stanford_r25_booking_attr144']))) {
     form_set_error('stanford_r25_booking_attr144', t('Invalid PTA Format. The correct format is Project-Task-Award (e.g. 1234567-123-ABCDE)'));
-  }
-}
-
-/**
- * Alter the mail to turn off things not needed to send.
- */
-function stanford_soe_r25_mail_alter(&$message) {
-  if (preg_match('/stanford_r25/', $message['id'])) {
-    unset($message['headers']['Sender']);
-    unset($message['headers']['Errors-To']);
-    unset($message['headers']['Return-Path']);
   }
 }
