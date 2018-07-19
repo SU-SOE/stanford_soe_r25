@@ -10,7 +10,7 @@
  */
 function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_state, $form_id) {
   // We need to alter the reservation form and add field settings for r25 "Event Attributes" 191,144,178,198,141, and 166.
-  
+
   $form['stanford_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_r25_booking_date']['#weight'] = -10;
   $form['stanford_r25_booking_duration']['#weight'] = -9;
@@ -40,8 +40,18 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
   array_unshift($form['#validate'], 'stanford_soe_r25_stanford_r25_pta_validate');
 }
 
-/**
+ /**
  * We need to validate the PTA Number.
+ *
+ * - Throw a validation error message if the ";" character is entered
+ *   in the stanford_r25_booking_reason field.
+ * - Throw a validation error message if the PTA field (attribute 144 in 25 Live)
+ *   if the value entered doesn't qualify as a valid PTA number format.
+ *
+ * @param array $form
+ *   The form to update.
+ * @param string $form_state
+ *   Submitted form state.
  */
 function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
   if (preg_match('/;/', $form_state['values']['stanford_r25_booking_reason'])) {
