@@ -6,9 +6,11 @@
  */
 
 /**
- * Hook into the reservation form for insidesoe.
+ * Implements hook_form_FORM_ID_alter().
  */
 function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_state, $form_id) {
+  // We need to alter the reservation form and add field settings for r25 "Event Attributes" 191,144,178,198,141, and 166.
+  
   $form['stanford_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_r25_booking_date']['#weight'] = -10;
   $form['stanford_r25_booking_duration']['#weight'] = -9;
