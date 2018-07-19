@@ -55,7 +55,7 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
  *   Submitted form state.
  */
 function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
-  $booking_reason_value = trim($form_state['values']['stanford_r25_booking_reason']);
+  $booking_reason_value = trim($form_state['values']['stanford_r25_booking_reason'], "\x7f..\xff\x0..\x1f");
   if (preg_match('/;/', $booking_reason_value)) {
     form_set_error('stanford_r25_booking_reason', t('Please do not include the ; character in the title of the event.'));
   }
