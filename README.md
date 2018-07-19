@@ -9,9 +9,3 @@ Description
 ---
 
 The Stanford SoE R25 module adds on to the stanford_r25 module by [ksharp](https://code.stanford.edu/ksharp/stanford_r25) for the Stanford SoE Intranet.
-
-
-Sub Modules
----
-**[jQuery Update](https://www.drupal.org/project/jquery_update)**
-This module upgrades the version of jQuery in Drupal core to a newer version of jQuery.
