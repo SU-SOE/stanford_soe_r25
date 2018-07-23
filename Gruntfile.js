@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           "node_modules/neat-omega",
           "node_modules"
         ],
-        sourceMap: true,
+        sourceMap: false,
         // This controls the compiled css and can be changed to nested, compact or compressed.
         outputStyle: 'expanded',
         precision: 10
