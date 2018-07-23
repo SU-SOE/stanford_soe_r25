@@ -37,20 +37,6 @@ function stanford_r25_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'stanford_r25_credential';
-  $strongarm->value = 'a:6:{s:4:"text";s:26:"���Śӵ��ۛ؃���ɶǨ���ѿ�";s:6:"method";s:7:"default";s:12:"key_provider";s:18:"drupal_private_key";s:7:"options";a:0:{}s:15:"method_settings";s:0:"";s:17:"provider_settings";s:0:"";}';
-  $export['stanford_r25_credential'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'stanford_r25_credential_contact_id';
-  $strongarm->value = '27667';
-  $export['stanford_r25_credential_contact_id'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'stanford_r25_event_type';
   $strongarm->value = '456';
   $export['stanford_r25_event_type'] = $strongarm;
