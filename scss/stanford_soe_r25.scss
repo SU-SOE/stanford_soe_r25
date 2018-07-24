@@ -1,0 +1,375 @@
+@charset 'UTF-8';
+
+//
+// Please compile using the compiler packaged in this module. `grunt watch`
+// For instructions please see the README.md
+//
+
+body.page-r25 {
+  .qtip-default {
+    border: 1px solid #8c1515;
+    background-color: #fff;
+    color: #555;
+  }
+
+  @media (max-width: 1200px) and (min-width: 979px) {
+    input[type="text"] {
+      width: 93%;
+    }
+  }
+
+  @media (max-width: 979px) and (min-width: 768px) {
+    input[type="text"] {
+      width: 65%;
+    }
+
+    .row-fluid {
+      .span4 {
+        width: 65%;
+      }
+    }
+
+    #sidebar-second {
+      width: 99%;
+      margin-left: 36%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #block-stanford-r25-stanford-r25-reserve, {
+      width: 92%;
+    }
+
+    #sidebar-second {
+      width: auto;
+      margin-left: 0;
+    }
+  }
+
+  #block-stanford-r25-stanford-r25-room-info {
+    margin-bottom: 15px;
+  }
+
+  #block-stanford-r25-stanford-r25-reserve,
+  .block-stanford-r25-stanford-r25-cancel {
+    border: 0;
+    border-top: 3px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    box-shadow: none;
+    background: #eee;
+    min-height: 20px;
+    padding: 20px;
+    border-radius: 0 0 4px 4px;
+
+    h2 {
+      color: #820000;
+      font-size: 18px;
+      margin: 0 0 12px;
+      padding: 0;
+      text-transform: none;
+      line-height: 1em;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  #block-stanford-r25-stanford-r25-reserve {
+    padding: 20px 10px;
+
+    @media (max-width: 979px) {
+      padding: 20px;
+    }
+  }
+
+  #stanford-r25-room-info {
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    float: left;
+
+    #stanford-r25-room-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    #stanford-r25-room-detail {
+      background: #fff;
+      padding: 20px;
+      border-radius: 0 0 4px 4px;
+      float: left;
+
+      #stanford-r25-room-comments,
+      #stanford-r25-room-capacity,
+      #stanford-r25-room-features {
+        margin: 0 0 1em;
+      }
+    }
+  }
+
+  #stanford-r25-reservation {
+    margin-bottom: 0;
+
+    .form-type-checkbox {
+      label {
+        width: 80%;
+      }
+
+      input.form-checkbox {
+        margin-top: 5px;
+        vertical-align: top;
+      }
+    }
+
+    input.form-submit {
+      background-color: #8c1515;
+      background-image: none;
+      border-style: none;
+      color: #fff;
+    }
+
+    #edit-stanford-r25-booking-date,
+    #edit-stanford-r25-booking-enddate {
+      padding: 5px;
+    }
+
+    .starttime,
+    .endtime {
+      margin-bottom: 25px;
+      font-size: .9em;
+      margin-top: 5px;
+      color: #333;
+    }
+
+    .container-inline-date {
+      border-top: 1px solid #bbb;
+      padding-top: 5px;
+
+      .form-item-stanford-r25-booking-enddate {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    #edit-submit--2 {
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .form-item {
+      margin: 0;
+
+      .description {
+        line-height: 1em;
+      }
+
+      .readandagree {
+        float: left;
+      }
+
+      label {
+        margin-bottom: 3px;
+      }
+
+      .se3-hide {
+        display: none;
+      }
+
+      .form-item-stanford-r25-booking-date-date,
+      .form-item-stanford-r25-booking-date-time,
+      .form-item-stanford-r25-booking-enddate-date,
+      .form-item-stanford-r25-booking-enddate-time {
+        .description {
+          display: none;
+        }
+      }
+    }
+
+    .form-item-stanford-r25-booking-attr144,
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr182 {
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+
+    .form-item-stanford-r25-booking-reason,
+    .form-item-stanford-r25-booking-attr191,
+    .form-item-stanford-r25-booking-headcount,
+    .form-item-stanford-r25-booking-attr166 {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr166 {
+      float: left;
+      margin-top: 0.4em;
+      margin-bottom: 0.4em;
+      margin-right: 10px;
+    }
+
+    .form-type-radios {
+      @media (max-width: 768px) and (min-width: 480px) {
+        width: 100%;
+      }
+    }
+
+    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr199,
+    .form-item-stanford-r25-booking-attr178 {
+      margin-top: 20px;
+    }
+
+    #edit-stanford-r25-booking-attr141,
+    #edit-stanford-r25-booking-attr166 {
+      .form-type-radio {
+        margin-top: 0;
+      }
+    }
+  }
+
+  #calendar {
+    thead {
+      th {
+        background: #f5f5f5 none repeat scroll 0 0;
+        color: #333;
+      }
+    }
+  }
+}
+
+form.webform-client-form-564 {
+  #edit-submitted-event-start-time-ampm,
+  #edit-submitted-event-time-finish-ampm,
+  .form-item-submitted-will-food-be-served,
+  .form-item-submitted-will-any-in-attendance-be-under-18-years {
+    display: inline;
+
+    input.form-radio,
+    label.option {
+      display: inline;
+    }
+  }
+
+  #edit-submitted-will-food-be-served-2,
+  #edit-submitted-will-any-in-attendance-be-under-18-years-2 {
+    margin-left: 10px;
+  }
+
+  #edit-submitted-event-start-time-ampm,
+  #edit-submitted-event-time-finish-ampm {
+    margin-left: 10px;
+  }
+
+  #edit-submitted-event-date-month,
+  #edit-submitted-event-date-finish-month,
+  #edit-submitted-event-date-day,
+  #edit-submitted-event-date-finish-day,
+  #edit-submitted-event-date-year,
+  #edit-submitted-event-date-finish-year {
+    display: none;
+    width: auto;
+  }
+
+  .webform-component--event-date,
+  .webform-component--event-date-finish {
+    margin-bottom: 0;
+
+    .webform-datepicker {
+      width: 205px;
+      display: inline-block;
+      height: 20px;
+      padding: 4px 6px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #555;
+      vertical-align: middle;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border linear .2s,box-shadow linear .2s;
+      -moz-transition: border linear .2s,box-shadow linear .2s;
+      -o-transition: border linear .2s,box-shadow linear .2s;
+      transition: border linear .2s,box-shadow linear .2s;
+
+      .form-item-submitted-event-date-year,
+      .form-item-submitted-event-date-finish-year {
+        &::after {
+          content: 'Date';
+          font-weight: bold;
+        }
+      }
+
+      input {
+        &.webform-calendar {
+          float: right;
+          padding: 3px 3px 3px 150px;
+        }
+      }
+
+      &.picked {
+        width: auto;
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #555;
+        vertical-align: middle;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        transition: none;
+
+        .form-item-submitted-event-date-year,
+        .form-item-submitted-event-date-finish-year {
+          &::after {
+            content: none;
+          }
+        }
+
+        input {
+          &.webform-calendar {
+            float: right;
+            padding: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .webform-component--event-start-time,
+  .webform-component--event-time-finish {
+    margin-top: 0;
+
+    select {
+      width: auto;
+    }
+  }
+
+  .webform-component--event-start-time,
+  .webform-component--event-time-finish,
+  .webform-component--will-food-be-served,
+  .webform-component--will-any-in-attendance-be-under-18-years {
+    .form-radios {
+      input {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Stanford R25 Settings feature.
+ */
+
+include_once 'stanford_r25_settings.features.inc';
