@@ -84,7 +84,7 @@ function stanford_r25_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'stanford_r25_org_id';
-  $strongarm->value = '499';
+  $strongarm->value = '2367';
   $export['stanford_r25_org_id'] = $strongarm;
 
   $strongarm = new stdClass();
