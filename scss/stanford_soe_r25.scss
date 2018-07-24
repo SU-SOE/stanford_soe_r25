@@ -186,7 +186,7 @@ body.page-r25 {
     }
 
     .form-item-stanford-r25-booking-attr144,
-    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr201,
     .form-item-stanford-r25-booking-attr182 {
       margin-top: 1em;
       margin-bottom: 0;
@@ -194,18 +194,9 @@ body.page-r25 {
 
     .form-item-stanford-r25-booking-reason,
     .form-item-stanford-r25-booking-attr191,
-    .form-item-stanford-r25-booking-headcount,
-    .form-item-stanford-r25-booking-attr166 {
+    .form-item-stanford-r25-booking-headcount{
       margin-top: 1em;
       margin-bottom: 1em;
-    }
-
-    .form-item-stanford-r25-booking-attr141,
-    .form-item-stanford-r25-booking-attr166 {
-      float: left;
-      margin-top: 0.4em;
-      margin-bottom: 0.4em;
-      margin-right: 10px;
     }
 
     .form-type-radios {
@@ -214,17 +205,15 @@ body.page-r25 {
       }
     }
 
-    .form-item-stanford-r25-booking-attr141,
+    .form-item-stanford-r25-booking-attr201,
     .form-item-stanford-r25-booking-attr199,
     .form-item-stanford-r25-booking-attr178 {
       margin-top: 20px;
     }
 
-    #edit-stanford-r25-booking-attr141,
-    #edit-stanford-r25-booking-attr166 {
-      .form-type-radio {
-        margin-top: 0;
-      }
+    .form-item-stanford-r25-booking-attr200 {
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
   }
 
