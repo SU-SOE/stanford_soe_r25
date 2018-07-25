@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * stanford_r25_settings.strongarm.inc
