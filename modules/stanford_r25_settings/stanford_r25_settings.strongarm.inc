@@ -142,7 +142,7 @@ function stanford_r25_settings_strongarm() {
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -151,7 +151,7 @@ function stanford_r25_settings_strongarm() {
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -225,7 +225,7 @@ Please contact seq-services@stanford.edu if you have any questions about this sp
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -234,7 +234,7 @@ Please contact seq-services@stanford.edu if you have any questions about this sp
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -308,7 +308,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -317,7 +317,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -390,7 +390,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -399,7 +399,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -472,7 +472,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -481,7 +481,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -554,7 +554,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -563,7 +563,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -636,7 +636,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -645,7 +645,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -718,7 +718,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -727,7 +727,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -800,7 +800,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -809,7 +809,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -884,7 +884,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -893,7 +893,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -966,7 +966,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -975,7 +975,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1048,7 +1048,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1057,7 +1057,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1130,7 +1130,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1139,7 +1139,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1212,7 +1212,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1221,7 +1221,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1294,7 +1294,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1303,7 +1303,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1376,7 +1376,7 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1385,7 +1385,7 @@ Approval is required to book this location. Please do not submit a request throu
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1461,7 +1461,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1470,7 +1470,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1543,7 +1543,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1552,7 +1552,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1625,7 +1625,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1634,7 +1634,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1707,7 +1707,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1716,7 +1716,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
@@ -1789,7 +1789,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,201,200',
+      'event_attributes' => '191*,183*,178*,199,201,200',
       'event_attribute_fields' => array(
         191 => array(
           'name' => 'Requesting Organization',
@@ -1798,7 +1798,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
