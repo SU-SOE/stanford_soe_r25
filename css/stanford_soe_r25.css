@@ -4,7 +4,7 @@ body.page-r25 .qtip-default {
   color: #555;
 }
 
-@media (max-width: 1200px) and (min-width: 979px) {
+@media (max-width: 1166px) and (min-width: 979px) {
   body.page-r25 input[type="text"] {
     width: 93%;
   }
@@ -51,7 +51,7 @@ body.page-r25 .block-stanford-r25-stanford-r25-cancel {
 
 body.page-r25 #block-stanford-r25-stanford-r25-reserve h2,
 body.page-r25 .block-stanford-r25-stanford-r25-cancel h2 {
-  color: #820000;
+  color: #816600;
   font-size: 18px;
   margin: 0 0 12px;
   padding: 0;
@@ -173,22 +173,22 @@ body.page-r25 #stanford-r25-reservation .form-item .form-item-stanford-r25-booki
 }
 
 body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr183,
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr201,
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr141,
 body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr182 {
   margin-top: 1em;
   margin-bottom: 0;
 }
 
 body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-reason,
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr191,
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr202,
 body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-headcount,
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr200 {
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr166 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr201,
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr200 {
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr141,
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr166 {
   float: left;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
@@ -202,14 +202,14 @@ body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr200 
   }
 }
 
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr201,
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr141,
 body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr199,
-body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr178 {
+body.page-r25 #stanford-r25-reservation .form-item-stanford-r25-booking-attr203 {
   margin-top: 20px;
 }
 
-body.page-r25 #stanford-r25-reservation #edit-stanford-r25-booking-attr201 .form-type-radio,
-body.page-r25 #stanford-r25-reservation #edit-stanford-r25-booking-attr200 .form-type-radio {
+body.page-r25 #stanford-r25-reservation #edit-stanford-r25-booking-attr141 .form-type-radio,
+body.page-r25 #stanford-r25-reservation #edit-stanford-r25-booking-attr166 .form-type-radio {
   margin-top: 0;
   width: auto;
 }

@@ -10,25 +10,25 @@
  */
 function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_state, $form_id) {
   // We need to alter the reservation form and add field settings.
-  // The settings for "Event Attributes" 191,183,178,198,141, and 166.
+  // The settings for "Event Attributes" 202,183,203,198,141, and 166.
   $form['stanford_r25_booking_tentative']['#weight'] = -11;
   $form['stanford_r25_booking_date']['#weight'] = -10;
   $form['stanford_r25_booking_duration']['#weight'] = -9;
   $form['stanford_r25_booking_enddate']['#weight'] = -8;
   $form['stanford_r25_booking_reason']['#weight'] = -7;
-  $form['stanford_r25_booking_attr191']['#weight'] = -3;
+  $form['stanford_r25_booking_attr202']['#weight'] = -3;
   $form['stanford_r25_booking_headcount']['#weight'] = -2;
   $form['stanford_r25_booking_attr183']['#weight'] = -1;
   $form['stanford_r25_booking_reason']['#title'] = t('Event Title');
   $form['stanford_r25_booking_attr182']['#title'] = t('Event Details');
-  $form['stanford_r25_booking_attr191']['#title'] = t('Primary Organization');
-  $form['stanford_r25_booking_attr201']['#type'] = 'radios';
-  $form['stanford_r25_booking_attr201']['#options'] = array(1 => t('Yes'), 0 => t('No'));
-  $form['stanford_r25_booking_attr201']['#default_value'] = variable_get('stanford_r25_booking_attr201', 0);
-  $form['stanford_r25_booking_attr200']['#type'] = 'radios';
-  $form['stanford_r25_booking_attr200']['#options'] = array(1 => t('Yes'), 0 => t('No'));
-  $form['stanford_r25_booking_attr200']['#default_value'] = variable_get('stanford_r25_booking_attr200', 0);
-  $form['stanford_r25_booking_attr178']['#suffix'] = '<div class="form-item"><span class="description">' . t('If unsure, please put N/A') . '</span></div>';
+  $form['stanford_r25_booking_attr202']['#title'] = t('Primary Organization');
+  $form['stanford_r25_booking_attr141']['#type'] = 'radios';
+  $form['stanford_r25_booking_attr141']['#options'] = array(1 => t('Yes'), 0 => t('No'));
+  $form['stanford_r25_booking_attr141']['#default_value'] = variable_get('stanford_r25_booking_attr141', 0);
+  $form['stanford_r25_booking_attr166']['#type'] = 'radios';
+  $form['stanford_r25_booking_attr166']['#options'] = array(1 => t('Yes'), 0 => t('No'));
+  $form['stanford_r25_booking_attr166']['#default_value'] = variable_get('stanford_r25_booking_attr166', 0);
+  $form['stanford_r25_booking_attr203']['#suffix'] = '<div class="form-item"><span class="description">' . t('If unsure, please put N/A') . '</span></div>';
   $form['submit']['#prefix'] = '<div class="form-item"><span class="readandagree">' . t('By clicking the Request button, I confirm that I have read and agree to the') . ' ' . l(t("Booking Agreement"), 'https://insidesoe.stanford.edu/science-and-engineering-quad/policies-rates') . '.</span></div>';
   $form['stanford_r25_booking_attr183']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g., 1234567-123-ABCDE (Case sensitive)') . '</span></div>';
   $form['stanford_r25_booking_attr199']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g. Reservation spans multiple days; Breakout spaces needed') . '</span></div>';
