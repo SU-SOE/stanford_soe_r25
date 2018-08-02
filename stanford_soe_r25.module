@@ -30,7 +30,7 @@ function stanford_soe_r25_form_stanford_r25_reservation_alter(&$form, &$form_sta
   $form['stanford_r25_booking_attr166']['#options'] = array('T' => t('Yes'), 'F' => t('No'));
   $form['stanford_r25_booking_attr166']['#default_value'] = variable_get('stanford_r25_booking_attr166', 'F');
   $form['stanford_r25_booking_attr203']['#suffix'] = '<div class="form-item"><span class="description">' . t('If unsure, please put N/A') . '</span></div>';
-  $form['submit']['#prefix'] = '<div class="form-item"><span class="readandagree">' . t('By clicking the Request button, I confirm that I have read and agree to the') . ' ' . l(t("Booking Agreement"), $base_url . '/science-and-engineering-quad/policies-rates') . '.</span></div>';
+  $form['submit']['#prefix'] = '<div class="form-item"><span class="readandagree">' . t('By clicking the Request button, I confirm that I have read and agree to the') . ' ' . l(t("Booking Agreement"), $base_url . '/science-and-engineering-quad/meeting-and-event-spaces/booking-agreement') . '.</span></div>';
   $form['stanford_r25_booking_attr183']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g., 1234567-123-ABCDE (Case sensitive)') . '</span></div>';
   $form['stanford_r25_booking_attr199']['#suffix'] = '<div class="form-item"><span class="description">' . t('E.g. Reservation spans multiple days; Breakout spaces needed') . '</span></div>';
   $form['stanford_r25_booking_date']['#suffix'] = '<div class="starttime">' . t('Start time includes set-up time') . '</div>';
