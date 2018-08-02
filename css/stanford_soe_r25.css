@@ -4,6 +4,14 @@ body.page-r25 .qtip-default {
   color: #555;
 }
 
+body.page-r25 #edit-actions {
+  margin-top: 2%;
+}
+
+body.page-r25 #edit-cancel {
+  margin-left: 2%;
+}
+
 @media (max-width: 1166px) and (min-width: 979px) {
   body.page-r25 input[type="text"] {
     width: 93%;

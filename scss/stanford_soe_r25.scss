@@ -12,6 +12,14 @@ body.page-r25 {
     color: #555;
   }
 
+  #edit-actions {
+    margin-top: 2%;
+  }
+  
+  #edit-cancel {
+    margin-left: 2%;
+  }
+
   @media (max-width: 1166px) and (min-width: 979px) {
     input[type="text"] {
       width: 93%;
