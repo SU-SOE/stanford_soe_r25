@@ -18,12 +18,13 @@
 
       // Make sure we keep the dates the same for the Start and End dates when selecting from the form field.
       $('#edit-stanford-r25-booking-date-datepicker-popup-0, #edit-stanford-r25-booking-enddate-datepicker-popup-0', context).on('change', function (e) {
-        if ($(this.id).selector == 'edit-stanford-r25-booking-date-datepicker-popup-0') {
-          $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-date-datepicker-popup-0').val());
-          $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).attr('readonly', true);
-          $('#edit-stanford-r25-booking-date-datepicker-popup-0', context).attr('readonly', true);
-        } else if ($(this.id).selector == 'edit-stanford-r25-booking-enddate-datepicker-popup-0') {
-          $('#edit-stanford-r25-booking-date-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-enddate-datepicker-popup-0').val());
+        if ($(this.id).selector == 'edit-stanford-r25-booking-date-datepicker-popup-0' || $(this.id).selector == 'edit-stanford-r25-booking-enddate-datepicker-popup-0') {
+          if ($(this.id).selector == 'edit-stanford-r25-booking-date-datepicker-popup-0') {
+            $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-date-datepicker-popup-0').val());
+          } else {
+            alert('foo');
+            $('#edit-stanford-r25-booking-date-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-enddate-datepicker-popup-0').val());
+          }
           $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).attr('readonly', true);
           $('#edit-stanford-r25-booking-date-datepicker-popup-0', context).attr('readonly', true);
         }
