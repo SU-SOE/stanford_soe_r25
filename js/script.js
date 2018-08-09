@@ -22,7 +22,6 @@
           if ($(this.id).selector == 'edit-stanford-r25-booking-date-datepicker-popup-0') {
             $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-date-datepicker-popup-0').val());
           } else {
-            alert('foo');
             $('#edit-stanford-r25-booking-date-datepicker-popup-0', context).val($('#edit-stanford-r25-booking-enddate-datepicker-popup-0').val());
           }
           $('#edit-stanford-r25-booking-enddate-datepicker-popup-0', context).attr('readonly', true);
