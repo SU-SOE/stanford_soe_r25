@@ -53,7 +53,7 @@ function stanford_r25_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'stanford_r25_from_email';
-  $strongarm->value = 'minorwm@stanford.edu';
+  $strongarm->value = 'seq-services@stanford.edu';
   $export['stanford_r25_from_email'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -84,7 +84,7 @@ function stanford_r25_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'stanford_r25_org_id';
-  $strongarm->value = '499';
+  $strongarm->value = '2367';
   $export['stanford_r25_org_id'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -114,8 +114,8 @@ function stanford_r25_settings_strongarm() {
       'display_name' => 'Huang 300 Mackenzie',
       'spud_name' => '',
       'space_id' => '1309',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -132,7 +132,7 @@ function stanford_r25_settings_strongarm() {
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -142,23 +142,23 @@ function stanford_r25_settings_strongarm() {
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -196,8 +196,8 @@ function stanford_r25_settings_strongarm() {
       'display_name' => 'Huang Amphitheater',
       'spud_name' => '',
       'space_id' => '1257',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -215,7 +215,7 @@ Please contact seq-services@stanford.edu if you have any questions about this sp
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -225,23 +225,23 @@ Please contact seq-services@stanford.edu if you have any questions about this sp
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -279,8 +279,8 @@ Please contact seq-services@stanford.edu if you have any questions about this sp
       'display_name' => 'Huang Courtyard',
       'spud_name' => '',
       'space_id' => '1305',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -298,7 +298,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -308,23 +308,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -362,8 +362,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Huang Forbes Cafe',
       'spud_name' => '',
       'space_id' => '1307',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -380,7 +380,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -390,23 +390,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -444,13 +444,13 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Huang Foyer',
       'spud_name' => '',
       'space_id' => '1308',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
       'location_info' => array(
-        'capacity' => '200',
+        'capacity' => '166',
         'comments' => 'Approval is required to book this location. Please do not submit a request through 25Live. Email seq-services@stanford.edu for more information.',
         'layout_name' => 'Reception [REC]',
         'layout_instruction' => NULL,
@@ -462,7 +462,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -472,23 +472,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -526,8 +526,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Huang Second Floor Terrace',
       'spud_name' => '',
       'space_id' => '1310',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -544,7 +544,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -554,23 +554,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -608,8 +608,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Shriram 262',
       'spud_name' => '',
       'space_id' => '1489',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -626,7 +626,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -636,23 +636,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -690,8 +690,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Shriram Courtyard',
       'spud_name' => '',
       'space_id' => '1532',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -708,7 +708,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -718,23 +718,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -772,8 +772,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Shriram Second Floor Edwards Terrace',
       'spud_name' => '',
       'space_id' => '1527',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -790,7 +790,7 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -800,23 +800,23 @@ Please contact seq-services@stanford.edu to request use of this space.',
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -854,8 +854,8 @@ Please contact seq-services@stanford.edu to request use of this space.',
       'display_name' => 'Shriram Tea Room and Sunken T',
       'spud_name' => '',
       'space_id' => '1508',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -874,7 +874,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -884,23 +884,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -938,8 +938,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Shriram Third Floor Terrace',
       'spud_name' => '',
       'space_id' => '1528',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -956,7 +956,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -966,23 +966,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1020,8 +1020,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Spilker 232',
       'spud_name' => '',
       'space_id' => '1313',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1038,7 +1038,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1048,23 +1048,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1102,13 +1102,13 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Spilker Courtyard',
       'spud_name' => '',
       'space_id' => '1317',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
       'location_info' => array(
-        'capacity' => '200',
+        'capacity' => '166',
         'comments' => 'Please contact seq-services@stanford.edu to request use of this space.',
         'layout_name' => 'As-Is',
         'layout_instruction' => NULL,
@@ -1120,7 +1120,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1130,23 +1130,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1184,8 +1184,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Spilker Second Floor Terrace',
       'spud_name' => '',
       'space_id' => '1314',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1202,7 +1202,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1212,23 +1212,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1266,8 +1266,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Y2E2 101',
       'spud_name' => '',
       'space_id' => '1061',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1284,7 +1284,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1294,23 +1294,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1348,8 +1348,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Y2E2 299',
       'spud_name' => '',
       'space_id' => '1072',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1366,7 +1366,7 @@ Approval is required to book this location. Please do not submit a request throu
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1376,23 +1376,23 @@ Approval is required to book this location. Please do not submit a request throu
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1430,8 +1430,8 @@ Approval is required to book this location. Please do not submit a request throu
       'display_name' => 'Y2E2 300',
       'spud_name' => '',
       'space_id' => '1080',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1451,7 +1451,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1461,23 +1461,23 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1515,8 +1515,8 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'display_name' => 'Y2E2 Courtyard',
       'spud_name' => '',
       'space_id' => '1329',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1533,7 +1533,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1543,23 +1543,23 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1597,8 +1597,8 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'display_name' => 'Y2E2 Second Floor Terrace',
       'spud_name' => '',
       'space_id' => '1323',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1615,7 +1615,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1625,23 +1625,23 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1679,8 +1679,8 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'display_name' => 'Y2E2 Social Entry',
       'spud_name' => '',
       'space_id' => '1330',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1697,7 +1697,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1707,23 +1707,23 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,
@@ -1761,8 +1761,8 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'display_name' => 'Y2E2 Third Floor Terrace',
       'spud_name' => '',
       'space_id' => '1327',
-      'email_list' => 'minorwm@stanford.edu',
-      'created' => 'Fri, 07/13/2018 - 11:53',
+      'email_list' => 'seq-services@stanford.edu',
+      'created' => 'Fri, 07/13/1418 - 11:53',
       'status' => 2,
       'caltype' => 2,
       'max_hours' => 12,
@@ -1779,7 +1779,7 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
       'description_as_title' => 0,
       'permalink' => 1,
       'honor_blackouts' => 0,
-      'approver_secgroup_name' => 'r25:seq_website_scheduler',
+      'approver_secgroup_name' => '',
       'approver_secgroup_id' => 261,
       'email_confirms_and_cancels' => 1,
       'authentication' => 1,
@@ -1789,23 +1789,23 @@ The AV in this space is a 92-inch monitor.  VGA and HDMI connectors.
         'value' => '<p>Need more help? Please <a href="https://stanford.service-now.com/services?id=get_help&amp;cmdb_ci=5e560e9613e3e240d08ebda12244b01e ">submit a Help ticket</a>.</p>',
         'format' => 'full_html',
       ),
-      'event_attributes' => '191*,144*,178*,199,141,166',
+      'event_attributes' => '202*,183*,203*,199,141,166',
       'event_attribute_fields' => array(
-        191 => array(
+        202 => array(
           'name' => 'Requesting Organization',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        144 => array(
+        183 => array(
           'name' => '** PTA Number',
           'type' => 'S',
           'contact' => FALSE,
           'required' => TRUE,
           'pta' => FALSE,
         ),
-        178 => array(
+        203 => array(
           'name' => '**PTA Signing Authority',
           'type' => 'S',
           'contact' => FALSE,

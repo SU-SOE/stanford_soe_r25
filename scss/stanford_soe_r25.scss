@@ -5,6 +5,13 @@
 // For instructions please see the README.md
 //
 
+body.page-admin-config-system-stanford-r25 {
+  .form-radio {
+    float: left;
+    margin-right: 5px;
+  }
+}
+
 body.page-r25 {
   .qtip-default {
     border: 1px solid #8c1515;
@@ -12,7 +19,15 @@ body.page-r25 {
     color: #555;
   }
 
-  @media (max-width: 1200px) and (min-width: 979px) {
+  #edit-actions {
+    margin-top: 2%;
+  }
+
+  #edit-cancel {
+    margin-left: 2%;
+  }
+
+  @media (max-width: 1166px) and (min-width: 979px) {
     input[type="text"] {
       width: 93%;
     }
@@ -62,7 +77,7 @@ body.page-r25 {
     border-radius: 0 0 4px 4px;
 
     h2 {
-      color: #820000;
+      color: #8c1515;
       font-size: 18px;
       margin: 0 0 12px;
       padding: 0;
@@ -185,7 +200,7 @@ body.page-r25 {
       }
     }
 
-    .form-item-stanford-r25-booking-attr144,
+    .form-item-stanford-r25-booking-attr183,
     .form-item-stanford-r25-booking-attr141,
     .form-item-stanford-r25-booking-attr182 {
       margin-top: 1em;
@@ -193,7 +208,7 @@ body.page-r25 {
     }
 
     .form-item-stanford-r25-booking-reason,
-    .form-item-stanford-r25-booking-attr191,
+    .form-item-stanford-r25-booking-attr202,
     .form-item-stanford-r25-booking-headcount,
     .form-item-stanford-r25-booking-attr166 {
       margin-top: 1em;
@@ -206,6 +221,7 @@ body.page-r25 {
       margin-top: 0.4em;
       margin-bottom: 0.4em;
       margin-right: 10px;
+      width: 100%;
     }
 
     .form-type-radios {
@@ -216,7 +232,7 @@ body.page-r25 {
 
     .form-item-stanford-r25-booking-attr141,
     .form-item-stanford-r25-booking-attr199,
-    .form-item-stanford-r25-booking-attr178 {
+    .form-item-stanford-r25-booking-attr203 {
       margin-top: 20px;
     }
 
@@ -224,6 +240,7 @@ body.page-r25 {
     #edit-stanford-r25-booking-attr166 {
       .form-type-radio {
         margin-top: 0;
+        width: auto;
       }
     }
   }
