@@ -66,3 +66,11 @@ function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
     form_set_error('stanford_r25_booking_attr183', t('Invalid PTA Format. The correct format is Project-Task-Award (e.g. 1234567-123-ABCDE)'));
   }
 }
+
+function stanford_soe_r25_mail_alter(&$message) {
+  if (preg_match('/stanford_r25/', $message['id'])) {
+    unset($message['headers']['Sender']);
+    unset($message['headers']['Errors-To']);
+    unset($message['headers']['Return-Path']);
+  }
+}
