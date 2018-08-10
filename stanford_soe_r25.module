@@ -70,8 +70,10 @@ function stanford_soe_r25_stanford_r25_pta_validate($form, &$form_state) {
 /**
  * We need to turn off some headders in the emails.
  *
- * - The reservation email say: tvdeegan@stanford.edu on behalf of seq-services@stanford.edu
- * - We want it to just show seq-services@stanford.edu and hide tvdeegan@stanford.edu
+ * - The reservation email say:
+ *   tvdeegan@stanford.edu on behalf of seq-services@stanford.edu
+ * - We want it to just show seq-services@stanford.edu
+ *   and hide tvdeegan@stanford.edu
  *
  * @param array $message
  *   The message for the email to modify.
